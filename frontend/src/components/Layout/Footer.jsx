@@ -14,22 +14,42 @@ function BridgeLogo() {
   );
 }
 
-const COL_PRODUCT = [
-  { to: '/',        label: 'Startseite'   },
-  { to: '/demo',    label: 'Live-Demo'    },
-  { to: '/about',   label: 'Über uns'     },
-  { to: '/glossar', label: 'Glossar'      },
-  { to: '/faq',     label: 'FAQ'          },
-];
-
-const COL_FUER_ORGS = [
-  { to: '/ngo',     label: 'Für NGOs & Behörden' },
-  { to: '/presse',  label: 'Pressebereich'        },
-];
-
-const COL_LEGAL = [
-  { to: '/impressum',   label: 'Impressum'      },
-  { to: '/datenschutz', label: 'Datenschutz'    },
+const COLS = [
+  {
+    heading: 'Produkt',
+    links: [
+      { to: '/',                  label: 'Startseite'         },
+      { to: '/demo',              label: 'Live-Demo'          },
+      { to: '/about',             label: 'Über uns'           },
+      { to: '/behoerden-finder',  label: 'Behörden-Finder'   },
+      { to: '/glossar',           label: 'Glossar'            },
+      { to: '/faq',               label: 'FAQ'                },
+    ],
+  },
+  {
+    heading: 'Ratgeber',
+    links: [
+      { to: '/blog',                           label: 'Blog / Ratgeber'           },
+      { to: '/blog/steuerbescheid-was-tun',    label: 'Steuerbescheid'            },
+      { to: '/blog/jobcenter-brief-was-tun',   label: 'Jobcenter-Brief'           },
+      { to: '/blog/asylverfahren-deutschland', label: 'Asylverfahren'             },
+    ],
+  },
+  {
+    heading: 'Organisationen',
+    links: [
+      { to: '/ngo',     label: 'Für NGOs & Behörden' },
+      { to: '/presse',  label: 'Pressebereich'        },
+      { to: '/kontakt', label: 'Kontakt'              },
+    ],
+  },
+  {
+    heading: 'Rechtliches',
+    links: [
+      { to: '/impressum',   label: 'Impressum'   },
+      { to: '/datenschutz', label: 'Datenschutz' },
+    ],
+  },
 ];
 
 export default function Footer() {
@@ -37,59 +57,41 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-surface no-print">
+    <footer className="border-t border-border bg-surface no-print" role="contentinfo">
       <div className="section-container py-14">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
-
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-6">
           {/* Brand – 2 cols */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2.5 font-bold text-white">
+            <Link to="/" className="flex items-center gap-2.5 font-bold text-white" aria-label="BüroBrücke – Startseite">
               <BridgeLogo />
               <span className="text-lg tracking-tight">Büro<span className="text-primary-400">Brücke</span></span>
             </Link>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-slate-500">
-              {t('footer.tagline')}
-            </p>
+            <p className="mt-3 max-w-xs text-sm leading-relaxed text-slate-500">{t('footer.tagline')}</p>
             <div className="mt-4 flex items-center gap-1.5 text-xs text-slate-600">
-              <Shield className="h-3.5 w-3.5" />{t('footer.disclaimer')}
+              <Shield className="h-3.5 w-3.5" aria-hidden="true" />{t('footer.disclaimer')}
             </div>
           </div>
 
-          {/* Produkt */}
-          <div>
-            <h3 className="mb-4 text-xs font-bold uppercase tracking-widest text-slate-500">Produkt</h3>
-            <ul className="space-y-2.5">
-              {COL_PRODUCT.map(({ to, label }) => (
-                <li key={to}><Link to={to} className="text-sm text-slate-500 transition hover:text-slate-200">{label}</Link></li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Für Organisationen */}
-          <div>
-            <h3 className="mb-4 text-xs font-bold uppercase tracking-widest text-slate-500">Organisationen</h3>
-            <ul className="space-y-2.5">
-              {COL_FUER_ORGS.map(({ to, label }) => (
-                <li key={to}><Link to={to} className="text-sm text-slate-500 transition hover:text-slate-200">{label}</Link></li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h3 className="mb-4 text-xs font-bold uppercase tracking-widest text-slate-500">Rechtliches</h3>
-            <ul className="space-y-2.5">
-              {COL_LEGAL.map(({ to, label }) => (
-                <li key={to}><Link to={to} className="text-sm text-slate-500 transition hover:text-slate-200">{label}</Link></li>
-              ))}
-            </ul>
-          </div>
+          {COLS.map(col => (
+            <nav key={col.heading} aria-label={col.heading}>
+              <h3 className="mb-4 text-xs font-bold uppercase tracking-widest text-slate-500">{col.heading}</h3>
+              <ul className="space-y-2.5" role="list">
+                {col.links.map(({ to, label }) => (
+                  <li key={to}>
+                    <Link to={to} className="text-sm text-slate-500 transition hover:text-slate-200 focus-ring rounded">
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
         </div>
 
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <p className="text-xs text-slate-600">© {year} BüroBrücke · {t('footer.rights_short')}</p>
           <p className="flex items-center gap-1.5 text-xs text-slate-600">
-            {t('footer.madeWith')} <Heart className="h-3.5 w-3.5 text-danger fill-danger" /> {t('footer.forImmigrants')}
+            {t('footer.madeWith')} <Heart className="h-3.5 w-3.5 text-danger fill-danger" aria-hidden="true" /> {t('footer.forImmigrants')}
           </p>
         </div>
       </div>

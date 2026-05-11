@@ -32,6 +32,15 @@ class Settings(BaseSettings):
     jwt_expire_days: int = 30
     claude_model: str = "claude-opus-4-5"
 
+    # SMTP E-Mail-Konfiguration (optional)
+    smtp_host:     str  = ""
+    smtp_port:     int  = 465
+    smtp_user:     str  = ""
+    smtp_password: str  = ""
+    smtp_from:     str  = "noreply@buerobruecke.de"
+    smtp_tls:      bool = True
+    app_base_url:  str  = "http://localhost:5173"
+
     @property
     def cors_origin_list(self) -> list[str]:
         return [o.strip() for o in self.cors_origins.split(",") if o.strip()]

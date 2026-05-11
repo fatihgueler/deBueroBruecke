@@ -1,0 +1,12 @@
+node/
+node.zip
+**/__pycache__
+**/.venv
+**/node_modules
+**/.env.local
+**/dist
+**/build
+*.db
+*.sqlite
+uploads/
+.git

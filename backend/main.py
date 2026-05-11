@@ -20,6 +20,8 @@ try:
     from routers import auth as auth_router
     from routers import documents as documents_router
     from routers import stats as stats_router
+    from routers import contact as contact_router
+    from routers import reminders as reminders_router
 except ImportError:
     from backend.config import get_settings
     from backend.database import init_db
@@ -28,6 +30,8 @@ except ImportError:
     from backend.routers import auth as auth_router
     from backend.routers import documents as documents_router
     from backend.routers import stats as stats_router
+    from backend.routers import contact as contact_router
+    from backend.routers import reminders as reminders_router
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s - %(message)s")
 logger = logging.getLogger("buerbruecke")
@@ -84,3 +88,5 @@ app.include_router(auth_router.router)
 app.include_router(documents_router.router)
 app.include_router(analysis_router.router)
 app.include_router(stats_router.router)
+app.include_router(contact_router.router)
+app.include_router(reminders_router.router)

@@ -5,12 +5,13 @@ import toast from 'react-hot-toast';
 import {
   FileText, Trash2, Plus, FileImage, FileType2,
   Eye, Clock, CheckCircle2, AlertCircle, UploadCloud,
-  Calendar, AlertTriangle, List,
+  Calendar, AlertTriangle, List, Search, Bell,
 } from 'lucide-react';
 
 import { documentsApi, extractErrorMessage } from '../api/client';
 import Card from '../components/UI/Card';
 import Spinner from '../components/UI/Spinner';
+import { usePushNotifications } from '../hooks/usePushNotifications';
 
 const STATUS_CONFIG = {
   pending:  { label: 'dashboard.status.pending',  cls: 'badge-warning',  Icon: Clock        },
@@ -94,6 +95,8 @@ export default function DashboardPage() {
   const [loading, setLoading] = useState(true);
   const [deletingId, setDeletingId] = useState(null);
   const [view, setView] = useState('list');
+  const [search, setSearch] = useState('');
+  const { permission, request: requestPush } = usePushNotifications();
 
   useEffect(() => {
     documentsApi.list()
@@ -115,6 +118,16 @@ export default function DashboardPage() {
     }
   };
 
+  const filtered = documents.filter(d => {
+    if (!search) return true;
+    const q = search.toLowerCase();
+    return (
+      d.original_filename.toLowerCase().includes(q) ||
+      d.analysis?.authority_type?.toLowerCase().includes(q) ||
+      d.analysis?.letter_type?.toLowerCase().includes(q)
+    );
+  });
+
   const upcomingCount = documents.filter(d => {
     const days = daysUntil(d.analysis?.deadline);
     return days !== null && days >= 0 && days <= 7;
@@ -132,6 +145,30 @@ export default function DashboardPage() {
           <Plus className="h-4 w-4" /> {t('dashboard.newUpload')}
         </Link>
       </div>
+
+      {/* Push-Notification Opt-in */}
+      {permission === 'default' && !loading && documents.length > 0 && (
+        <div className="mb-4 flex items-center justify-between gap-4 rounded-xl border border-primary-500/25 bg-primary-500/8 px-4 py-3 animate-fade-in">
+          <div className="flex items-center gap-2.5 text-sm">
+            <Bell className="h-4 w-4 text-primary-400 flex-shrink-0" />
+            <span className="text-slate-300">Browser-Benachrichtigungen für Frist-Erinnerungen aktivieren?</span>
+          </div>
+          <button type="button" onClick={() => requestPush().then(r => r === 'granted' && toast.success('Benachrichtigungen aktiviert!'))}
+            className="btn-primary text-xs px-3 py-1.5 whitespace-nowrap">
+            Aktivieren
+          </button>
+        </div>
+      )}
+
+      {/* Suche */}
+      {!loading && documents.length > 0 && (
+        <div className="relative mb-4">
+          <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" />
+          <input type="text" value={search} onChange={e => setSearch(e.target.value)}
+            placeholder="Nach Name, Behörde oder Brieftyp suchen…"
+            className="input-field pl-10" />
+        </div>
+      )}
 
       {/* Stats */}
       {!loading && documents.length > 0 && (
@@ -185,10 +222,15 @@ export default function DashboardPage() {
           </Link>
         </Card>
       ) : view === 'calendar' ? (
-        <DeadlineList documents={documents} />
+        <DeadlineList documents={filtered} />
       ) : (
         <ul className="grid gap-3 animate-fade-in">
-          {documents.map(doc => {
+          {filtered.length === 0 && search && (
+            <Card className="py-10 text-center">
+              <p className="text-slate-400">Keine Ergebnisse für „{search}".</p>
+            </Card>
+          )}
+          {filtered.map(doc => {
             const FileIcon = doc.file_type === 'pdf' ? FileType2 : FileImage;
             const cfg = STATUS_CONFIG[doc.status] || STATUS_CONFIG.pending;
             const StatusIcon = cfg.Icon;
