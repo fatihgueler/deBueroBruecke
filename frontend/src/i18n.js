@@ -1,0 +1,50 @@
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+
+import de from './locales/de.json';
+import tr from './locales/tr.json';
+import ar from './locales/ar.json';
+import ru from './locales/ru.json';
+import ku from './locales/ku.json';
+
+export const SUPPORTED_LANGUAGES = [
+  { code: 'de', label: 'Deutsch', flag: 'DE' },
+  { code: 'tr', label: 'Türkçe', flag: 'TR' },
+  { code: 'ar', label: 'العربية', flag: 'AR' },
+  { code: 'ru', label: 'Русский', flag: 'RU' },
+  { code: 'ku', label: 'Kurmancî', flag: 'KU' },
+];
+
+export const RTL_LANGUAGES = new Set(['ar']);
+
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    resources: {
+      de: { translation: de },
+      tr: { translation: tr },
+      ar: { translation: ar },
+      ru: { translation: ru },
+      ku: { translation: ku },
+    },
+    fallbackLng: 'de',
+    supportedLngs: SUPPORTED_LANGUAGES.map((l) => l.code),
+    interpolation: { escapeValue: false },
+    detection: {
+      order: ['localStorage', 'navigator'],
+      caches: ['localStorage'],
+    },
+  });
+
+export function applyLanguageDirection(lang) {
+  const dir = RTL_LANGUAGES.has(lang) ? 'rtl' : 'ltr';
+  document.documentElement.setAttribute('dir', dir);
+  document.documentElement.setAttribute('lang', lang);
+}
+
+applyLanguageDirection(i18n.language || 'de');
+i18n.on('languageChanged', applyLanguageDirection);
+
+export default i18n;

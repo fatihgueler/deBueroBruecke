@@ -1,0 +1,120 @@
+{
+  "app": {
+    "name": "BüroBrücke",
+    "tagline": "Nameya fermî bigire wêne — em ji te re rave dikin tu çi bikî."
+  },
+  "nav": {
+    "dashboard": "Sereke",
+    "upload": "Nameya nû",
+    "logout": "Derkeve",
+    "login": "Têkeve",
+    "register": "Tomar bibe"
+  },
+  "landing": {
+    "title": "Nameyên fermî di çend saniyan de fêhm bike",
+    "subtitle": "Nameyê bar bike û bi zimanê xwe ravekirineke zelal werbigire.",
+    "cta": "Niha dest pê bike",
+    "ctaLogin": "Têkeve",
+    "features": {
+      "photo": {
+        "title": "Wêne bigire an bar bike",
+        "desc": "Wêne, skan an PDF — her tişt bixweber tê naskirin."
+      },
+      "explain": {
+        "title": "Ravekirineke zelal",
+        "desc": "Em zimanê fermî bo gotinên hêsan werdigerînin."
+      },
+      "act": {
+        "title": "Gavên paşê yên diyar",
+        "desc": "Tê zanibî tu çi bikî û heta kîjan rojê."
+      }
+    }
+  },
+  "auth": {
+    "email": "E-mail",
+    "password": "Şîfre",
+    "language": "Zimanê hilbijartî",
+    "login": "Têkeve",
+    "register": "Hesabê biafirîne",
+    "noAccount": "Hesabê te tune?",
+    "haveAccount": "Berê tomar bûyî?",
+    "registerNow": "Niha tomar bibe",
+    "loginNow": "Têkeve",
+    "loginTitle": "Bi xêr hatî",
+    "loginSubtitle": "Ji bo birêvebirina nameyên xwe têkeve.",
+    "registerTitle": "Hesabê biafirîne",
+    "registerSubtitle": "Belaş dest pê bike — nameyê bar bike û fêhm bike.",
+    "passwordHint": "Herî kêm 8 tîp.",
+    "errors": {
+      "required": "Pêwîst",
+      "emailInvalid": "Ji kerema xwe e-maileke rast binivîse.",
+      "passwordTooShort": "Herî kêm 8 tîp.",
+      "loginFailed": "E-mail an şîfre xelet e.",
+      "registerFailed": "Tomarkirin bi ser neket."
+    }
+  },
+  "dashboard": {
+    "title": "Nameyên te",
+    "subtitle": "Hemû nameyên ku te bar kirine û analîzên wan.",
+    "empty": "Te hîn ti name bar nekirine.",
+    "newUpload": "Nameyek nû bar bike",
+    "status": {
+      "pending": "Li benda analîzê",
+      "analyzed": "Hatiye analîz kirin",
+      "error": "Xeletî"
+    },
+    "delete": "Jê bibe",
+    "deleteConfirm": "Tu dixwazî vê nameyê jê bibî?",
+    "view": "Binêre"
+  },
+  "upload": {
+    "title": "Nameyê bar bike",
+    "subtitle": "Wêneya, skana an PDF a nameya fermî bar bike.",
+    "dropzone": "Pelê li vir berde an bitikîne ku hilbijêrî",
+    "dropzoneActive": "Pelê berde…",
+    "hint": "JPG, PNG an PDF · zêdetirîn 10 MB",
+    "uploading": "Tê barkirin…",
+    "analyzing": "Name tê analîz kirin…",
+    "errorType": "Forma pelê nayê piştgirîkirin.",
+    "errorSize": "Pel pir mezin e (zêdetirîn 10 MB).",
+    "errorUpload": "Barkirin bi ser neket.",
+    "errorAnalysis": "Analîz bi ser neket."
+  },
+  "result": {
+    "title": "Encama analîzê",
+    "authority": "Saziya fermî",
+    "letterType": "Cureyê nameyê",
+    "demand": "Çi tê xwestin?",
+    "deadline": "Dema dawî",
+    "noDeadline": "Dema dawî nehatiye diyarkirin",
+    "consequence": "Ger ez tiştekî nekim çi diqewime?",
+    "action": "Niha divê tu çi bikî?",
+    "fullExplanation": "Ravekirina tam",
+    "generateReply": "Pêşnûma bersivê biafirîne",
+    "regenerateReply": "Pêşnûmeyek nû biafirîne",
+    "replyDraft": "Pêşnûma bersivê",
+    "replyHint": "Berî şandinê cihên [di nav kevanan] de tijî bike.",
+    "copyReply": "Pêşnûmê kopî bike",
+    "copied": "Hatiye kopîkirin!",
+    "generating": "Pêşnûma tê afirandin…",
+    "backToDashboard": "Vegere sereke",
+    "urgency": {
+      "low": "Acîliyeta kêm",
+      "medium": "Acîliyeta navîn",
+      "high": "Acîliyeta zêde",
+      "critical": "Krîtîk — yekser bike"
+    }
+  },
+  "common": {
+    "loading": "Tê barkirin…",
+    "error": "Tiştek xelet çû.",
+    "retry": "Dîsa biceribîne",
+    "cancel": "Betal bike",
+    "save": "Tomar bike",
+    "close": "Bigire"
+  },
+  "footer": {
+    "rights": "© 2025 BüroBrücke. Hemû maf parastî ne.",
+    "disclaimer": "BüroBrücke şûna şêwirmendiya hiqûqî nagire."
+  }
+}

@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* RTL für Arabisch */
+  html[dir='rtl'] {
+    text-align: right;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-primary-500 px-5 py-2.5 font-medium text-white shadow-sm transition hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-surface disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-slate-700 bg-card px-5 py-2.5 font-medium text-slate-100 transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-600 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white;
+  }
+
+  .input-field {
+    @apply w-full rounded-lg border border-slate-700 bg-card px-4 py-2.5 text-slate-100 placeholder-slate-500 transition focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/40;
+  }
+
+  .label-field {
+    @apply mb-1.5 block text-sm font-medium text-slate-300;
+  }
+
+  .card-base {
+    @apply rounded-2xl border border-slate-800 bg-card p-6 shadow-lg;
+  }
+}
