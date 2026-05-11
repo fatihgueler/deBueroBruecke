@@ -13,6 +13,7 @@ import {
   Mail,
   Copy,
   CheckCheck,
+  Printer,
 } from 'lucide-react';
 
 import { analysisApi, documentsApi, extractErrorMessage } from '../api/client';
@@ -121,10 +122,16 @@ export default function ResultPage() {
 
   return (
     <main className="mx-auto w-full max-w-4xl flex-1 px-4 py-10">
-      <Link to="/dashboard" className="btn-ghost mb-4 inline-flex">
-        <ArrowLeft className="h-4 w-4" />
-        {t('result.backToDashboard')}
-      </Link>
+      <div className="mb-4 flex items-center justify-between no-print">
+        <Link to="/dashboard" className="btn-ghost inline-flex">
+          <ArrowLeft className="h-4 w-4" />
+          {t('result.backToDashboard')}
+        </Link>
+        <button type="button" onClick={() => window.print()} className="btn-secondary text-sm">
+          <Printer className="h-4 w-4" />
+          Als PDF speichern
+        </button>
+      </div>
 
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>

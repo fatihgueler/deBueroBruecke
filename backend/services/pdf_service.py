@@ -7,7 +7,10 @@ from pathlib import Path
 import fitz  # PyMuPDF
 from PIL import Image
 
-from services.ocr_service import ocr_image_bytes
+try:
+    from services.ocr_service import ocr_image_bytes
+except ImportError:
+    from backend.services.ocr_service import ocr_image_bytes
 
 
 def extract_pdf_text(path: Path) -> str:

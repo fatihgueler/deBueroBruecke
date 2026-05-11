@@ -1,0 +1,45 @@
+{
+  "app": { "name": "BüroBrücke", "tagline": "Kuptoji letrat zyrtare menjëherë – në gjuhën tënde." },
+  "nav": { "home": "Kryefaqja", "dashboard": "Pamja", "upload": "Letër e re", "logout": "Dilni", "login": "Hyrni", "register": "Regjistrohu falas", "about": "Rreth nesh" },
+  "landing": {
+    "badge": "Inteligjencë Artificiale · 9 Gjuhë · 100% Falas",
+    "title": { "part1": "Çdo letër zyrtare", "highlight": "gjermane", "part2": "kuptoje menjëherë" },
+    "subtitle": "Ngarko letrën tënde zyrtare – brenda sekondave do të dish çfarë kërkohet, afatin dhe çfarë duhet të bësh – në gjuhën tënde.",
+    "cta": "Fillo falas", "ctaLogin": "Keni llogari? Hyni", "learnMore": "Mëso më shumë",
+    "trust_badge": { "free": "100% falas", "noData": "Pa ndarje të dhënash", "instant": "Përgjigje e menjëhershme" },
+    "languages": { "label": "Gjuhët e mbështetura" },
+    "steps": {
+      "eyebrow": "Si funksionon", "title": "Rezultati në 3 hapa", "subtitle": "Asnjë gjermanisht zyrtar. Kuptoje letrën brenda sekondave.",
+      "upload": { "title": "Ngarko letrën", "desc": "Foto, skanim ose PDF – gjithçka njihet automatikisht." },
+      "analyze": { "title": "IA analizon", "desc": "IA jonë njeh institucionin, kërkesën, afatin dhe urgjencën." },
+      "act": { "title": "Kuptoji dhe vepro", "desc": "Marrësh shpjegim të qartë në gjuhën tënde dhe hapa konkretë." }
+    },
+    "authorities": { "label": "Institucionet e mbështetura" },
+    "trust": {
+      "title": "E sigurt, e shpejtë dhe e besueshme", "subtitle": "Projektuar për ata që kanë nevojë për ndihmë reale.",
+      "secure": { "title": "Siguria e të dhënave", "desc": "Dokumentet tuaja ruhen me siguri dhe nuk ndahen kurrë." },
+      "fast": { "title": "Analizë e menjëhershme", "desc": "Rezultate brenda sekondave." },
+      "multi": { "title": "9 gjuhë", "desc": "Shpjegime në shqip, turqisht, arabisht, rusisht, kurmanxhi dhe më shumë." },
+      "free": { "title": "Plotësisht falas", "desc": "BüroBrücke është falas për të gjithë emigrantët dhe refugjatët në Gjermani." }
+    },
+    "finalCta": { "title": "Fillo me BüroBrücke sot", "subtitle": "Regjistrohu falas dhe kuptoji letrat zyrtare në gjuhën tënde.", "hint": "Asnjë kartë kredie · 100% falas" },
+    "features": {
+      "photo": { "title": "Fotografo ose ngarko", "desc": "Foto, skanim ose PDF – gjithçka njihet." },
+      "explain": { "title": "Shpjegim i qartë", "desc": "Gjuhën zyrtare e shndërrojmë në fjalë të thjeshta." },
+      "act": { "title": "Hapat e ardhshëm konkretë", "desc": "Do të dini çfarë duhet të bëni dhe deri kur." }
+    }
+  },
+  "auth": {
+    "email": "Email", "password": "Fjalëkalimi", "language": "Gjuha e preferuar",
+    "login": "Hyni", "register": "Krijo llogari", "noAccount": "Nuk ke llogari?", "haveAccount": "Tashmë i regjistruar?",
+    "registerNow": "Regjistrohu falas", "loginNow": "Hyni",
+    "loginTitle": "Mirë se u ktheve", "loginSubtitle": "Hyr për të menaxhuar letrat tuaja.",
+    "registerTitle": "Krijo llogari", "registerSubtitle": "Fillo falas.", "passwordHint": "Minimum 8 karaktere.",
+    "errors": { "required": "Fushë e detyrueshme", "emailInvalid": "Fut një email të vlefshëm.", "passwordTooShort": "Minimum 8 karaktere.", "loginFailed": "Email ose fjalëkalim i gabuar.", "registerFailed": "Regjistrimi dështoi." }
+  },
+  "dashboard": { "title": "Letrat tuaja", "subtitle": "Të gjitha letrat e ngarkuara dhe analizat e tyre.", "empty": "Nuk ke ngarkuar ende asnjë letër.", "newUpload": "Ngarko letër të re", "status": { "pending": "Në pritje", "analyzed": "Analizuar", "error": "Gabim" }, "delete": "Fshij", "deleteConfirm": "Dëshiron ta fshish këtë letër?", "view": "Shiko" },
+  "upload": { "title": "Ngarko letër", "subtitle": "Ngarko foton, skanimin ose PDF-in e letrës zyrtare.", "dropzone": "Hidhe skedarin këtu ose kliko", "dropzoneActive": "Lëshoje …", "hint": "JPG, PNG ose PDF · maks. 10 MB", "uploading": "Duke ngarkuar …", "analyzing": "Duke analizuar …", "errorType": "Format i pambështetur.", "errorSize": "Skedari është shumë i madh.", "errorUpload": "Ngarkimi dështoi.", "errorAnalysis": "Analiza dështoi." },
+  "result": { "title": "Rezultati i analizës", "authority": "Institucioni", "letterType": "Lloji i letrës", "demand": "Çfarë kërkohet?", "deadline": "Afati", "noDeadline": "Asnjë afat i specifikuar", "consequence": "Çfarë ndodh nëse nuk bëj asgjë?", "action": "Çfarë duhet të bëj tani?", "fullExplanation": "Shpjegimi i plotë", "generateReply": "Krijo draft përgjigje", "regenerateReply": "Krijo draft të ri", "replyDraft": "Draft i përgjigjes", "replyHint": "Plotëso fushat [në kllapa] para se të dërgosh.", "copyReply": "Kopjo draftin", "copied": "Kopjuar!", "generating": "Duke krijuar …", "backToDashboard": "Kthehu te pamja", "urgency": { "low": "Urgjencë e ulët", "medium": "Urgjencë mesatare", "high": "Urgjencë e lartë", "critical": "Kritike – vepro menjëherë!" } },
+  "common": { "loading": "Duke ngarkuar …", "error": "Diçka shkoi keq.", "retry": "Provo përsëri", "cancel": "Anulo", "save": "Ruaj", "close": "Mbyll", "back": "Kthehu" },
+  "footer": { "tagline": "Ura midis emigrantëve dhe burokracisë gjermane.", "disclaimer": "BüroBrücke nuk zëvendëson këshillimin juridik.", "rights_short": "Të gjitha të drejtat të rezervuara.", "madeWith": "Bërë me", "forImmigrants": "për emigrantët në Gjermani", "sections": { "product": "Produkt", "legal": "Juridike" }, "links": { "about": "Rreth nesh", "impressum": "Të dhëna ligjore", "datenschutz": "Privatësia", "contact": "Kontakt" } }
+}

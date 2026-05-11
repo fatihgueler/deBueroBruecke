@@ -6,7 +6,10 @@ from collections.abc import AsyncGenerator
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.orm import DeclarativeBase
 
-from config import get_settings
+try:
+    from config import get_settings
+except ImportError:
+    from backend.config import get_settings
 
 settings = get_settings()
 
@@ -30,7 +33,10 @@ class Base(DeclarativeBase):
 
 async def init_db() -> None:
     """Erstellt alle Tabellen beim App-Start (idempotent)."""
-    import models  # noqa: F401  --  Modelle registrieren
+    try:
+        import models  # noqa: F401  --  Modelle registrieren
+    except ImportError:
+        import backend.models  # noqa: F401  --  Modelle registrieren
 
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)

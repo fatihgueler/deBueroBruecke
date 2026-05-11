@@ -12,12 +12,22 @@ from slowapi import _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
 from slowapi.middleware import SlowAPIMiddleware
 
-from config import get_settings
-from database import init_db
-from limiter import limiter
-from routers import analysis as analysis_router
-from routers import auth as auth_router
-from routers import documents as documents_router
+try:
+    from config import get_settings
+    from database import init_db
+    from limiter import limiter
+    from routers import analysis as analysis_router
+    from routers import auth as auth_router
+    from routers import documents as documents_router
+    from routers import stats as stats_router
+except ImportError:
+    from backend.config import get_settings
+    from backend.database import init_db
+    from backend.limiter import limiter
+    from backend.routers import analysis as analysis_router
+    from backend.routers import auth as auth_router
+    from backend.routers import documents as documents_router
+    from backend.routers import stats as stats_router
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s - %(message)s")
 logger = logging.getLogger("buerbruecke")
@@ -73,3 +83,4 @@ async def health() -> dict[str, str]:
 app.include_router(auth_router.router)
 app.include_router(documents_router.router)
 app.include_router(analysis_router.router)
+app.include_router(stats_router.router)

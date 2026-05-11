@@ -6,50 +6,35 @@ import Footer from './components/Layout/Footer';
 import Spinner from './components/UI/Spinner';
 import { useAuth } from './context/AuthContext';
 
-import LandingPage     from './pages/LandingPage';
-import LoginPage       from './pages/LoginPage';
-import RegisterPage    from './pages/RegisterPage';
-import DashboardPage   from './pages/DashboardPage';
-import UploadPage      from './pages/UploadPage';
-import ResultPage      from './pages/ResultPage';
-import AboutPage       from './pages/AboutPage';
-import ImpressumPage   from './pages/ImpressumPage';
-import DatenschutzPage from './pages/DatenschutzPage';
+import LandingPage        from './pages/LandingPage';
+import LoginPage          from './pages/LoginPage';
+import RegisterPage       from './pages/RegisterPage';
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
+import ResetPasswordPage  from './pages/ResetPasswordPage';
+import DashboardPage      from './pages/DashboardPage';
+import UploadPage         from './pages/UploadPage';
+import ResultPage         from './pages/ResultPage';
+import DemoPage           from './pages/DemoPage';
+import AboutPage          from './pages/AboutPage';
+import NGOPage            from './pages/NGOPage';
+import GlossarPage        from './pages/GlossarPage';
+import FAQPage            from './pages/FAQPage';
+import PressePage         from './pages/PressePage';
+import ImpressumPage      from './pages/ImpressumPage';
+import DatenschutzPage    from './pages/DatenschutzPage';
 
 function ProtectedRoute({ children }) {
   const { isAuthenticated, loading } = useAuth();
   const location = useLocation();
-
-  if (loading) {
-    return (
-      <div className="flex flex-1 items-center justify-center py-20">
-        <Spinner size={32} />
-      </div>
-    );
-  }
-
-  if (!isAuthenticated) {
-    return <Navigate to="/login" replace state={{ from: location }} />;
-  }
-
+  if (loading) return <div className="flex flex-1 items-center justify-center py-20"><Spinner size={32} /></div>;
+  if (!isAuthenticated) return <Navigate to="/login" replace state={{ from: location }} />;
   return children;
 }
 
 function PublicOnlyRoute({ children }) {
   const { isAuthenticated, loading } = useAuth();
-
-  if (loading) {
-    return (
-      <div className="flex flex-1 items-center justify-center py-20">
-        <Spinner size={32} />
-      </div>
-    );
-  }
-
-  if (isAuthenticated) {
-    return <Navigate to="/dashboard" replace />;
-  }
-
+  if (loading) return <div className="flex flex-1 items-center justify-center py-20"><Spinner size={32} /></div>;
+  if (isAuthenticated) return <Navigate to="/dashboard" replace />;
   return children;
 }
 
@@ -73,50 +58,34 @@ export default function App() {
       <Toaster
         position="top-center"
         toastOptions={{
-          style: {
-            background:    '#152035',
-            color:         '#f1f5f9',
-            border:        '1px solid #1e3050',
-            borderRadius:  '12px',
-            fontSize:      '14px',
-            padding:       '12px 16px',
-          },
+          style: { background: '#152035', color: '#f1f5f9', border: '1px solid #1e3050', borderRadius: '12px', fontSize: '14px', padding: '12px 16px' },
           success: { iconTheme: { primary: '#22c55e', secondary: '#0b1425' } },
           error:   { iconTheme: { primary: '#ef4444', secondary: '#0b1425' } },
         }}
       />
       <Routes>
         {/* Public */}
-        <Route path="/"            element={<LandingPage />}     />
-        <Route path="/about"       element={<AboutPage />}       />
-        <Route path="/impressum"   element={<ImpressumPage />}   />
-        <Route path="/datenschutz" element={<DatenschutzPage />} />
+        <Route path="/"             element={<LandingPage />}      />
+        <Route path="/demo"         element={<DemoPage />}         />
+        <Route path="/about"        element={<AboutPage />}        />
+        <Route path="/ngo"          element={<NGOPage />}          />
+        <Route path="/glossar"      element={<GlossarPage />}      />
+        <Route path="/faq"          element={<FAQPage />}          />
+        <Route path="/presse"       element={<PressePage />}       />
+        <Route path="/impressum"    element={<ImpressumPage />}    />
+        <Route path="/datenschutz"  element={<DatenschutzPage />}  />
 
-        {/* Auth-only public */}
-        <Route
-          path="/login"
-          element={<PublicOnlyRoute><LoginPage /></PublicOnlyRoute>}
-        />
-        <Route
-          path="/register"
-          element={<PublicOnlyRoute><RegisterPage /></PublicOnlyRoute>}
-        />
+        {/* Auth public-only */}
+        <Route path="/login"           element={<PublicOnlyRoute><LoginPage /></PublicOnlyRoute>}           />
+        <Route path="/register"        element={<PublicOnlyRoute><RegisterPage /></PublicOnlyRoute>}        />
+        <Route path="/forgot-password" element={<PublicOnlyRoute><ForgotPasswordPage /></PublicOnlyRoute>} />
+        <Route path="/reset-password"  element={<ResetPasswordPage />}                                    />
 
         {/* Protected */}
-        <Route
-          path="/dashboard"
-          element={<ProtectedRoute><DashboardPage /></ProtectedRoute>}
-        />
-        <Route
-          path="/upload"
-          element={<ProtectedRoute><UploadPage /></ProtectedRoute>}
-        />
-        <Route
-          path="/result/:documentId"
-          element={<ProtectedRoute><ResultPage /></ProtectedRoute>}
-        />
+        <Route path="/dashboard"          element={<ProtectedRoute><DashboardPage /></ProtectedRoute>}          />
+        <Route path="/upload"             element={<ProtectedRoute><UploadPage /></ProtectedRoute>}             />
+        <Route path="/result/:documentId" element={<ProtectedRoute><ResultPage /></ProtectedRoute>}             />
 
-        {/* Fallback */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />

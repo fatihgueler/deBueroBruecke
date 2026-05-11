@@ -9,7 +9,10 @@ from typing import Any
 
 from anthropic import APIError, APITimeoutError, AsyncAnthropic
 
-from backend.config import get_settings
+try:
+    from config import get_settings
+except ImportError:
+    from backend.config import get_settings
 
 logger = logging.getLogger(__name__)
 
@@ -22,6 +25,9 @@ LANGUAGE_NAMES: dict[str, str] = {
     "ru": "Russisch (Русский)",
     "ku": "Kurdisch / Kurmancî",
     "uk": "Ukrainisch (Українська)",
+    "fa": "Persisch / Farsi (فارسی)",
+    "sq": "Albanisch (Shqip)",
+    "sr": "Serbisch (Srpski / Српски)",
 }
 
 ANALYSIS_REQUIRED_KEYS = {

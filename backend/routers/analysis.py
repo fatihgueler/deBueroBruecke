@@ -5,11 +5,18 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from auth import get_current_user
-from database import get_db
-from models import Analysis, Document, User
-from schemas import AnalysisOut, ReplyDraftRequest
-from services.claude_service import get_claude_service
+try:
+    from auth import get_current_user
+    from database import get_db
+    from models import Analysis, Document, User
+    from schemas import AnalysisOut, ReplyDraftRequest
+    from services.claude_service import get_claude_service
+except ImportError:
+    from backend.auth import get_current_user
+    from backend.database import get_db
+    from backend.models import Analysis, Document, User
+    from backend.schemas import AnalysisOut, ReplyDraftRequest
+    from backend.services.claude_service import get_claude_service
 
 router = APIRouter(prefix="/api/analysis", tags=["analysis"])
 

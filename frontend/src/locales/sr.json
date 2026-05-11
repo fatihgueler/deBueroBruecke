@@ -1,0 +1,45 @@
+{
+  "app": { "name": "BüroBrücke", "tagline": "Razumej zvanična pisma odmah – na svom jeziku." },
+  "nav": { "home": "Početna", "dashboard": "Pregled", "upload": "Novo pismo", "logout": "Odjavi se", "login": "Prijavi se", "register": "Registruj se besplatno", "about": "O nama" },
+  "landing": {
+    "badge": "Veštačka inteligencija · 9 jezika · 100% besplatno",
+    "title": { "part1": "Svako nemačko", "highlight": "zvanično pismo", "part2": "razumej odmah" },
+    "subtitle": "Otpremi svoje zvanično pismo – za nekoliko sekundi saznaćeš šta se traži, koji je rok i šta konkretno treba da uradiš – na svom jeziku.",
+    "cta": "Počni besplatno", "ctaLogin": "Već registrovan? Prijavi se", "learnMore": "Saznaj više",
+    "trust_badge": { "free": "100% besplatno", "noData": "Bez deljenja podataka", "instant": "Trenutni odgovor" },
+    "languages": { "label": "Podržani jezici" },
+    "steps": {
+      "eyebrow": "Kako funkcioniše", "title": "Rezultat u 3 koraka", "subtitle": "Bez zvaničnog nemačkog. Razumej pismo za nekoliko sekundi.",
+      "upload": { "title": "Otpremi pismo", "desc": "Foto, sken ili PDF – sve se automatski prepoznaje." },
+      "analyze": { "title": "VI analizira", "desc": "Naša VI prepoznaje instituciju, zahtev, rok i hitnost." },
+      "act": { "title": "Razumej i deluj", "desc": "Dobijaš jasno objašnjenje na svom jeziku i konkretne korake." }
+    },
+    "authorities": { "label": "Podržane institucije" },
+    "trust": {
+      "title": "Sigurno, brzo i pouzdano", "subtitle": "Napravljeno za one kojima je potrebna stvarna pomoć.",
+      "secure": { "title": "Bezbednost podataka", "desc": "Tvoji dokumenti su bezbedno sačuvani i nikad se ne dele." },
+      "fast": { "title": "Trenutna analiza", "desc": "Rezultati za nekoliko sekundi." },
+      "multi": { "title": "9 jezika", "desc": "Objašnjenja na srpskom, turskom, arapskom, ruskom, kurdskom i više." },
+      "free": { "title": "Potpuno besplatno", "desc": "BüroBrücke je besplatan za sve imigrante i izbeglice u Nemačkoj." }
+    },
+    "finalCta": { "title": "Počni sa BüroBrücke danas", "subtitle": "Registruj se besplatno i odmah razumej zvanična pisma na svom jeziku.", "hint": "Bez kreditne kartice · 100% besplatno" },
+    "features": {
+      "photo": { "title": "Fotografiši ili otpremi", "desc": "Foto, sken ili PDF – sve se prepoznaje." },
+      "explain": { "title": "Jasno objašnjenje", "desc": "Zvanični jezik pretvaramo u jednostavne reči." },
+      "act": { "title": "Konkretni sledeći koraci", "desc": "Saznaćeš šta treba da uradiš i do kada." }
+    }
+  },
+  "auth": {
+    "email": "E-pošta", "password": "Lozinka", "language": "Željeni jezik",
+    "login": "Prijavi se", "register": "Napravi nalog", "noAccount": "Nemaš nalog?", "haveAccount": "Već registrovan?",
+    "registerNow": "Registruj se besplatno", "loginNow": "Prijavi se",
+    "loginTitle": "Dobrodošao/la nazad", "loginSubtitle": "Prijavi se da upravljaš svojim pismima.",
+    "registerTitle": "Napravi nalog", "registerSubtitle": "Počni besplatno.", "passwordHint": "Najmanje 8 znakova.",
+    "errors": { "required": "Obavezno polje", "emailInvalid": "Unesi validnu e-adresu.", "passwordTooShort": "Najmanje 8 znakova.", "loginFailed": "E-pošta ili lozinka je pogrešna.", "registerFailed": "Registracija nije uspela." }
+  },
+  "dashboard": { "title": "Tvoja pisma", "subtitle": "Sva otpremljena pisma i njihove analize.", "empty": "Još nisi otpremio nijedno pismo.", "newUpload": "Otpremi novo pismo", "status": { "pending": "Na čekanju", "analyzed": "Analizirano", "error": "Greška" }, "delete": "Obriši", "deleteConfirm": "Želiš da obrišeš ovo pismo?", "view": "Pregledaj" },
+  "upload": { "title": "Otpremi pismo", "subtitle": "Otpremi fotografiju, sken ili PDF zvaničnog pisma.", "dropzone": "Prevuci datoteku ovde ili klikni", "dropzoneActive": "Pusti …", "hint": "JPG, PNG ili PDF · maks. 10 MB", "uploading": "Otpremanje …", "analyzing": "Analiza pisma …", "errorType": "Format nije podržan.", "errorSize": "Datoteka je prevelika.", "errorUpload": "Otpremanje nije uspelo.", "errorAnalysis": "Analiza nije uspela." },
+  "result": { "title": "Rezultat analize", "authority": "Institucija", "letterType": "Vrsta pisma", "demand": "Šta se traži?", "deadline": "Rok", "noDeadline": "Rok nije naveden", "consequence": "Šta se dešava ako ne reagujem?", "action": "Šta treba da uradim sada?", "fullExplanation": "Potpuno objašnjenje", "generateReply": "Napravi nacrt odgovora", "regenerateReply": "Novi nacrt", "replyDraft": "Nacrt odgovora", "replyHint": "Popuni polja [u uglastim zagradama] pre slanja.", "copyReply": "Kopiraj nacrt", "copied": "Kopirano!", "generating": "Pravljenje nacrta …", "backToDashboard": "Nazad na pregled", "urgency": { "low": "Niska hitnost", "medium": "Srednja hitnost", "high": "Visoka hitnost", "critical": "Kritično – odmah deluj!" } },
+  "common": { "loading": "Učitavanje …", "error": "Nešto je pošlo naopako.", "retry": "Pokušaj ponovo", "cancel": "Otkaži", "save": "Sačuvaj", "close": "Zatvori", "back": "Nazad" },
+  "footer": { "tagline": "Most između imigranata i nemačke birokratije.", "disclaimer": "BüroBrücke ne zamenjuje pravno savetovanje.", "rights_short": "Sva prava zadržana.", "madeWith": "Napravljeno sa", "forImmigrants": "za imigrante u Nemačkoj", "sections": { "product": "Proizvod", "legal": "Pravno" }, "links": { "about": "O nama", "impressum": "Pravni podaci", "datenschutz": "Privatnost", "contact": "Kontakt" } }
+}

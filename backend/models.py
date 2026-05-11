@@ -8,7 +8,10 @@ from typing import Optional
 from sqlalchemy import DateTime, ForeignKey, String, Text, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from database import Base
+try:
+    from database import Base
+except ImportError:
+    from backend.database import Base
 
 
 def _uuid() -> str:
@@ -86,3 +89,12 @@ class Analysis(Base):
     )
 
     document: Mapped[Document] = relationship("Document", back_populates="analysis")
+
+
+class PasswordResetToken(Base):
+    __tablename__ = "password_reset_tokens"
+
+    token: Mapped[str] = mapped_column(String(64), primary_key=True)
+    user_id: Mapped[str] = mapped_column(String(36), ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
+    expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    used: Mapped[bool] = mapped_column(default=False)

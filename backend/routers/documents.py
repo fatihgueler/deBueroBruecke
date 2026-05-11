@@ -1,5 +1,4 @@
 """Documents-Router: Upload, Liste, Details, Löschen."""
-from __future__ import annotations
 
 import uuid
 from pathlib import Path
@@ -8,14 +7,24 @@ from fastapi import APIRouter, Depends, File, HTTPException, Request, UploadFile
 from sqlalchemy import desc, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from auth import get_current_user
-from config import get_settings
-from database import get_db
-from limiter import limiter
-from models import Document, User
-from schemas import DocumentOut
-from services.ocr_service import extract_image_text
-from services.pdf_service import extract_pdf_text
+try:
+    from auth import get_current_user
+    from config import get_settings
+    from database import get_db
+    from limiter import limiter
+    from models import Document, User
+    from schemas import DocumentOut
+    from services.ocr_service import extract_image_text
+    from services.pdf_service import extract_pdf_text
+except ImportError:
+    from backend.auth import get_current_user
+    from backend.config import get_settings
+    from backend.database import get_db
+    from backend.limiter import limiter
+    from backend.models import Document, User
+    from backend.schemas import DocumentOut
+    from backend.services.ocr_service import extract_image_text
+    from backend.services.pdf_service import extract_pdf_text
 
 router = APIRouter(prefix="/api/documents", tags=["documents"])
 
@@ -49,8 +58,8 @@ def _detect_file_type(upload: UploadFile) -> str:
 
 @router.post(
     "/upload",
-    response_model=DocumentOut,
     status_code=status.HTTP_201_CREATED,
+    response_model=None,
 )
 @limiter.limit("10/minute")
 async def upload_document(
@@ -58,7 +67,7 @@ async def upload_document(
     file: UploadFile = File(...),
     current_user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
-) -> DocumentOut:
+):
     file_type = _detect_file_type(file)
     suffix = Path(file.filename or "").suffix.lower() or (".pdf" if file_type == "pdf" else ".png")
 

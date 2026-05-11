@@ -8,6 +8,9 @@ import ar from './locales/ar.json';
 import ru from './locales/ru.json';
 import ku from './locales/ku.json';
 import uk from './locales/uk.json';
+import fa from './locales/fa.json';
+import sq from './locales/sq.json';
+import sr from './locales/sr.json';
 
 export const SUPPORTED_LANGUAGES = [
   { code: 'de', label: 'Deutsch',      flag: '🇩🇪' },
@@ -16,9 +19,12 @@ export const SUPPORTED_LANGUAGES = [
   { code: 'ru', label: 'Русский',      flag: '🇷🇺' },
   { code: 'ku', label: 'Kurmancî',     flag: '🏴' },
   { code: 'uk', label: 'Українська',   flag: '🇺🇦' },
+  { code: 'fa', label: 'فارسی',        flag: '🇮🇷' },
+  { code: 'sq', label: 'Shqip',        flag: '🇦🇱' },
+  { code: 'sr', label: 'Srpski',       flag: '🇷🇸' },
 ];
 
-export const RTL_LANGUAGES = new Set(['ar']);
+export const RTL_LANGUAGES = new Set(['ar', 'fa']);
 
 i18n
   .use(LanguageDetector)
@@ -31,14 +37,14 @@ i18n
       ru: { translation: ru },
       ku: { translation: ku },
       uk: { translation: uk },
+      fa: { translation: fa },
+      sq: { translation: sq },
+      sr: { translation: sr },
     },
     fallbackLng: 'de',
     supportedLngs: SUPPORTED_LANGUAGES.map((l) => l.code),
     interpolation: { escapeValue: false },
-    detection: {
-      order: ['localStorage', 'navigator'],
-      caches: ['localStorage'],
-    },
+    detection: { order: ['localStorage', 'navigator'], caches: ['localStorage'] },
   });
 
 export function applyLanguageDirection(lang) {
