@@ -44,7 +44,22 @@ build/
 !.vscode/extensions.json
 !.vscode/launch.json
 !.vscode/tasks.json
-.idea/
+
+# JetBrains: nur Team-relevante Configs committen, alles andere ignorieren
+.idea/*
+!.idea/runConfigurations/
+!.idea/codeStyles/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/shelf/
+.idea/dataSources/
+.idea/dataSources.local.xml
+.idea/httpRequests/
+.idea/dictionaries/
+.idea/jsLibraryMappings.xml
+*.iml
+
 *.swp
 *.swo
 *~
