@@ -2,7 +2,7 @@
 chcp 65001 >nul
 title BüroBrücke – Backend
 
-:: Verzeichnis dieses Scripts
+:: Verzeichnis dieses Scripts (= debuerobruecke/)
 set SCRIPT_DIR=%~dp0
 
 echo.
@@ -25,7 +25,8 @@ call "%VENV%\Scripts\activate.bat"
 echo [INFO] Abhängigkeiten prüfen / installieren...
 pip install -r "%SCRIPT_DIR%backend\requirements.txt" --quiet
 
-:: Aus dem Elternordner starten (wichtig für Importe)
+:: WICHTIG: aus debuerobruecke/ starten, nicht aus backend/
+:: (wegen: from backend.xxx import ... in database.py, auth.py usw.)
 echo.
 echo [OK] Backend startet auf http://localhost:8000
 echo [OK] API-Doku: http://localhost:8000/docs
