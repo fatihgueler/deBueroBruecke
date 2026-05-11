@@ -6,7 +6,7 @@ from typing import Literal, Optional
 
 from pydantic import BaseModel, ConfigDict, EmailStr, Field
 
-SupportedLanguage = Literal["de", "tr", "ar", "ru", "ku"]
+SupportedLanguage = Literal["de", "tr", "ar", "ru", "ku", "uk"]
 UrgencyLevel = Literal["low", "medium", "high", "critical"]
 DocumentStatus = Literal["pending", "analyzed", "error"]
 

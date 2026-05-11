@@ -71,3 +71,7 @@ logs/
 
 # OS
 Thumbs.db
+
+# Bundled Node.js runtime
+node/
+node.zip

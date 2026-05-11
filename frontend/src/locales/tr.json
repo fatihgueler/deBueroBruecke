@@ -1,120 +1,199 @@
 {
   "app": {
     "name": "BüroBrücke",
-    "tagline": "Resmi mektubunun fotoğrafını çek — ne yapman gerektiğini sana anlatalım."
+    "tagline": "Resmi mektubunu anında anla – kendi dilinde."
   },
   "nav": {
+    "home":      "Ana Sayfa",
     "dashboard": "Genel Bakış",
-    "upload": "Yeni Mektup",
-    "logout": "Çıkış yap",
-    "login": "Giriş yap",
-    "register": "Kayıt ol"
+    "upload":    "Yeni Mektup",
+    "logout":    "Çıkış yap",
+    "login":     "Giriş yap",
+    "register":  "Ücretsiz kayıt ol",
+    "about":     "Hakkımızda"
   },
   "landing": {
-    "title": "Resmi mektupları saniyeler içinde anla",
-    "subtitle": "Bir mektup yükle ve kendi dilinde net bir açıklama al.",
-    "cta": "Hemen başla",
-    "ctaLogin": "Giriş yap",
-    "features": {
-      "photo": {
-        "title": "Fotoğraf çek veya yükle",
-        "desc": "Fotoğraf, tarama veya PDF — her şey otomatik tanınır."
+    "badge":    "Yapay Zeka Destekli · 6 Dil · %100 Ücretsiz",
+    "title": {
+      "part1":     "Her Alman resmi",
+      "highlight": "mektubunu",
+      "part2":     "anında anla"
+    },
+    "subtitle":  "Resmi mektubunu yükle – saniyeler içinde ne istendiğini, hangi son tarihin geçerli olduğunu ve ne yapman gerektiğini kendi dilinde öğren.",
+    "cta":       "Ücretsiz başla",
+    "ctaLogin":  "Zaten kayıtlısın? Giriş yap",
+    "learnMore": "Daha fazla bilgi",
+    "trust_badge": {
+      "free":    "%100 ücretsiz",
+      "noData":  "Veri paylaşımı yok",
+      "instant": "Anında yanıt"
+    },
+    "languages": {
+      "label": "Desteklenen diller"
+    },
+    "steps": {
+      "eyebrow": "Bu kadar kolay çalışır",
+      "title":   "3 adımda sonuca ulaş",
+      "subtitle":"Artık resmi Almanca yok. Mektubunu saniyeler içinde anla.",
+      "upload": {
+        "title": "Mektup yükle",
+        "desc":  "Fotoğraf, tarama veya PDF – her şey otomatik tanınır ve metin çıkarılır."
       },
-      "explain": {
-        "title": "Net açıklama",
-        "desc": "Resmi dili sade kelimelere çeviriyoruz."
+      "analyze": {
+        "title": "YZ analiz eder",
+        "desc":  "YZ'miz kurumu, talebi, son tarihi tanır ve aciliyeti değerlendirir."
       },
       "act": {
-        "title": "Somut sonraki adımlar",
-        "desc": "Ne yapman gerektiğini ve hangi tarihe kadar olduğunu öğren."
+        "title": "Anla ve harekete geç",
+        "desc":  "Kendi dilinde net bir açıklama ve somut adım önerileri alırsın."
       }
+    },
+    "authorities": {
+      "label": "Desteklenen kurumlar ve kuruluşlar"
+    },
+    "trust": {
+      "title":    "Güvenli, hızlı ve güvenilir",
+      "subtitle": "Güvene ihtiyacı olanlar için tasarlandı.",
+      "secure": {
+        "title": "Veri güvenliği",
+        "desc":  "Belgelerini güvenli şekilde saklarız, asla paylaşmayız."
+      },
+      "fast": {
+        "title": "Anında analiz",
+        "desc":  "Saniyeler içinde sonuç – bekleme yok, uzun formlar yok."
+      },
+      "multi": {
+        "title": "6 dil",
+        "desc":  "Türkçe, Arapça, Rusça, Kürtçe, Ukraynaca ve daha fazlası."
+      },
+      "free": {
+        "title": "Tamamen ücretsiz",
+        "desc":  "BüroBrücke, Almanya'daki tüm göçmenler için ücretsizdir."
+      }
+    },
+    "finalCta": {
+      "title":    "BüroBrücke ile bugün başla",
+      "subtitle": "Ücretsiz kaydol ve resmi mektupları anında kendi dilinde anla.",
+      "hint":     "Kredi kartı gerekmez · %100 ücretsiz"
+    },
+    "features": {
+      "photo":   { "title": "Fotoğraf çek veya yükle", "desc": "Fotoğraf, tarama veya PDF – her şey otomatik tanınır." },
+      "explain": { "title": "Net açıklama",             "desc": "Resmi dili sade kelimelere çeviriyoruz." },
+      "act":     { "title": "Somut sonraki adımlar",    "desc": "Ne yapman gerektiğini ve ne zaman olduğunu öğren." }
     }
   },
   "auth": {
-    "email": "E-posta",
-    "password": "Şifre",
-    "language": "Tercih edilen dil",
-    "login": "Giriş yap",
-    "register": "Hesap oluştur",
-    "noAccount": "Henüz hesabın yok mu?",
-    "haveAccount": "Zaten kayıtlı mısın?",
-    "registerNow": "Şimdi kayıt ol",
-    "loginNow": "Giriş yap",
-    "loginTitle": "Tekrar hoş geldin",
-    "loginSubtitle": "Mektuplarını yönetmek için giriş yap.",
-    "registerTitle": "Hesap oluştur",
-    "registerSubtitle": "Ücretsiz başla — mektubunu yükle ve anla.",
-    "passwordHint": "En az 8 karakter.",
+    "email":            "E-posta adresi",
+    "password":         "Şifre",
+    "language":         "Tercih edilen dil",
+    "login":            "Giriş yap",
+    "register":         "Hesap oluştur",
+    "noAccount":        "Henüz hesabın yok mu?",
+    "haveAccount":      "Zaten kayıtlı mısın?",
+    "registerNow":      "Ücretsiz kayıt ol",
+    "loginNow":         "Giriş yap",
+    "loginTitle":       "Tekrar hoş geldin",
+    "loginSubtitle":    "Mektuplarını yönetmek için giriş yap.",
+    "registerTitle":    "Hesap oluştur",
+    "registerSubtitle": "Ücretsiz başla – mektubunu yükle ve anında anla.",
+    "passwordHint":     "En az 8 karakter.",
     "errors": {
-      "required": "Zorunlu alan",
-      "emailInvalid": "Lütfen geçerli bir e-posta gir.",
-      "passwordTooShort": "En az 8 karakter.",
-      "loginFailed": "E-posta veya şifre yanlış.",
-      "registerFailed": "Kayıt başarısız oldu."
+      "required":        "Zorunlu alan",
+      "emailInvalid":    "Lütfen geçerli bir e-posta adresi gir.",
+      "passwordTooShort":"En az 8 karakter gerekli.",
+      "loginFailed":     "E-posta veya şifre yanlış.",
+      "registerFailed":  "Kayıt başarısız. Lütfen tekrar dene."
     }
   },
   "dashboard": {
-    "title": "Mektupların",
+    "title":    "Mektupların",
     "subtitle": "Yüklediğin tüm mektuplar ve analizleri.",
-    "empty": "Henüz mektup yüklemedin.",
-    "newUpload": "Yeni mektup yükle",
-    "status": {
-      "pending": "Analiz bekleniyor",
-      "analyzed": "Analiz edildi",
-      "error": "Hata"
-    },
-    "delete": "Sil",
-    "deleteConfirm": "Bu mektubu silmek istediğine emin misin?",
-    "view": "Görüntüle"
+    "empty":    "Henüz mektup yüklemedin.",
+    "newUpload":"Yeni mektup yükle",
+    "status": { "pending": "Beklemede", "analyzed": "Analiz edildi", "error": "Hata" },
+    "delete":        "Sil",
+    "deleteConfirm": "Bu mektubu silmek istediğine emin misin? Bu işlem geri alınamaz.",
+    "view":          "Görüntüle"
   },
   "upload": {
-    "title": "Mektup yükle",
-    "subtitle": "Resmi mektubunun fotoğrafını, taramasını veya PDF'sini yükle.",
-    "dropzone": "Dosyayı buraya bırak veya tıkla",
-    "dropzoneActive": "Dosyayı bırak…",
-    "hint": "JPG, PNG veya PDF · maks. 10 MB",
-    "uploading": "Yükleniyor…",
-    "analyzing": "Mektup analiz ediliyor…",
-    "errorType": "Desteklenmeyen dosya formatı.",
-    "errorSize": "Dosya çok büyük (maks. 10 MB).",
-    "errorUpload": "Yükleme başarısız oldu.",
-    "errorAnalysis": "Analiz başarısız oldu."
+    "title":         "Mektup yükle",
+    "subtitle":      "Resmi mektubunun fotoğrafını, taramasını veya PDF'sini yükle – gerisini biz hallederiz.",
+    "dropzone":      "Dosyayı buraya bırak veya tıkla",
+    "dropzoneActive":"Dosyayı bırak …",
+    "hint":          "JPG, PNG veya PDF · maks. 10 MB",
+    "uploading":     "Yükleniyor …",
+    "analyzing":     "Mektup analiz ediliyor …",
+    "errorType":     "Desteklenmeyen dosya formatı. Lütfen JPG, PNG veya PDF kullan.",
+    "errorSize":     "Dosya çok büyük (maks. 10 MB).",
+    "errorUpload":   "Yükleme başarısız. Lütfen tekrar dene.",
+    "errorAnalysis": "Analiz başarısız. Lütfen tekrar dene."
   },
   "result": {
-    "title": "Analiz sonucu",
-    "authority": "Kurum",
-    "letterType": "Mektup türü",
-    "demand": "Ne talep ediliyor?",
-    "deadline": "Son tarih",
-    "noDeadline": "Son tarih belirtilmemiş",
-    "consequence": "Hiçbir şey yapmazsam ne olur?",
-    "action": "Şimdi ne yapmalısın?",
+    "title":           "Analiz sonucu",
+    "authority":       "Kurum",
+    "letterType":      "Mektup türü",
+    "demand":          "Ne talep ediliyor?",
+    "deadline":        "Son tarih",
+    "noDeadline":      "Son tarih belirtilmemiş",
+    "consequence":     "Hiçbir şey yapmazsam ne olur?",
+    "action":          "Şimdi ne yapmalısın?",
     "fullExplanation": "Detaylı açıklama",
-    "generateReply": "Yanıt taslağı oluştur",
+    "generateReply":   "Yanıt taslağı oluştur",
     "regenerateReply": "Yeni taslak oluştur",
-    "replyDraft": "Yanıt taslağı",
-    "replyHint": "Göndermeden önce [köşeli parantezdeki] yer tutucuları doldur.",
-    "copyReply": "Taslağı kopyala",
-    "copied": "Kopyalandı!",
-    "generating": "Taslak oluşturuluyor…",
+    "replyDraft":      "Yanıt taslağı (Almanca)",
+    "replyHint":       "Göndermeden önce [köşeli parantezdeki] yer tutucuları doldur.",
+    "copyReply":       "Taslağı kopyala",
+    "copied":          "Kopyalandı!",
+    "generating":      "Taslak oluşturuluyor …",
     "backToDashboard": "Genel bakışa dön",
     "urgency": {
-      "low": "Düşük öncelik",
-      "medium": "Orta öncelik",
-      "high": "Yüksek öncelik",
-      "critical": "Kritik – hemen harekete geç"
+      "low":      "Düşük öncelik",
+      "medium":   "Orta öncelik",
+      "high":     "Yüksek öncelik",
+      "critical": "Kritik – hemen harekete geç!"
+    }
+  },
+  "about": {
+    "title":    "BüroBrücke Hakkında",
+    "subtitle": "Almanya'daki göçmenlerin ve mültecilerin Alman bürokrasisini anlamasına yardımcı oluyoruz.",
+    "mission":  { "title": "Misyonumuz", "desc": "BüroBrücke, Almanya'daki yeni göçmenler için en büyük engellerden birini aşmak amacıyla geliştirildi: karmaşık resmi dil. Resmi mektupları, kullanıcının ana dilinde anlaşılır hale getirmek için en son yapay zeka teknolojisini kullanıyoruz." },
+    "problem":  { "title": "Sorun", "desc": "Her yıl yüz binlerce insan Almanya'ya geliyor. Finanzamt, Jobcenter, Ausländerbehörde gibi kurumlardan Almanca mektuplar alıyorlar. Bu mektuplar, yardım olmadan bunaltıcı olabilir ve ciddi sonuçlara yol açabilir." },
+    "solution": { "title": "Çözümümüz", "desc": "Bir fotoğraf veya PDF yüklemek yeterli. Yapay zekamız mektubu analiz eder ve saniyeler içinde kullanıcının ana dilinde net bir açıklama sunar." },
+    "languages":{ "title": "Desteklenen Diller", "desc": "Şu anda 6 dil desteklenmektedir: Almanca, Türkçe, Arapça, Rusça, Kürtçe (Kurmancî) ve Ukraynaca." }
+  },
+  "impressum": {
+    "title": "Künye",
+    "developer": "Geliştirici",
+    "contact": "İletişim",
+    "disclaimer": { "title": "Sorumluluk Reddi", "content": "BüroBrücke hukuki danışmanlık sunmaz. Bilgiler yalnızca yönlendirme amaçlıdır." },
+    "tech": { "title": "Teknoloji", "content": "Bu uygulama, metin analizi için Anthropic'in Claude AI'sını ve OCR için Tesseract'ı kullanmaktadır." }
+  },
+  "datenschutz": {
+    "title": "Gizlilik Politikası",
+    "intro": "Kişisel verilerinin korunmasını çok ciddiye alıyoruz.",
+    "sections": {
+      "data":     { "title": "Hangi veriler toplanır?", "content": "Kimlik doğrulama için e-posta adresini ve analiz için yüklediğin belgeleri saklarız." },
+      "usage":    { "title": "Verilerini ne için kullanıyoruz?", "content": "Belgeler yalnızca yapay zeka analizi için kullanılır. Verilerini üçüncü taraflarla paylaşmıyoruz." },
+      "deletion": { "title": "Verilerinin silinmesi", "content": "Belgelerini istediğin zaman kontrol panelinden silebilirsin." },
+      "cookies":  { "title": "Çerezler", "content": "Yalnızca teknik olarak gerekli çerezler (JWT kimlik doğrulama) kullanıyoruz." }
     }
   },
   "common": {
-    "loading": "Yükleniyor…",
-    "error": "Bir şeyler ters gitti.",
-    "retry": "Tekrar dene",
-    "cancel": "İptal",
-    "save": "Kaydet",
-    "close": "Kapat"
+    "loading": "Yükleniyor …",
+    "error":   "Bir şeyler ters gitti.",
+    "retry":   "Tekrar dene",
+    "cancel":  "İptal",
+    "save":    "Kaydet",
+    "close":   "Kapat",
+    "back":    "Geri"
   },
   "footer": {
-    "rights": "© 2025 BüroBrücke. Tüm hakları saklıdır.",
-    "disclaimer": "BüroBrücke hukuki danışmanlık yerine geçmez."
+    "tagline":      "Göçmenler ile Alman bürokrasisi arasındaki köprü.",
+    "disclaimer":   "BüroBrücke hukuki danışmanlık yerine geçmez.",
+    "rights_short": "Tüm hakları saklıdır.",
+    "madeWith":     "ile yapıldı",
+    "forImmigrants":"Almanya'daki göçmenler için",
+    "sections": { "product": "Ürün", "legal": "Hukuki" },
+    "links": { "about": "Hakkımızda", "impressum": "Künye", "datenschutz": "Gizlilik", "contact": "İletişim" }
   }
 }

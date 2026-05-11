@@ -9,7 +9,7 @@ from typing import Any
 
 from anthropic import APIError, APITimeoutError, AsyncAnthropic
 
-from config import get_settings
+from backend.config import get_settings
 
 logger = logging.getLogger(__name__)
 
@@ -21,6 +21,7 @@ LANGUAGE_NAMES: dict[str, str] = {
     "ar": "Arabisch (العربية)",
     "ru": "Russisch (Русский)",
     "ku": "Kurdisch / Kurmancî",
+    "uk": "Ukrainisch (Українська)",
 }
 
 ANALYSIS_REQUIRED_KEYS = {
@@ -119,6 +120,77 @@ def _normalize_analysis(data: dict[str, Any], language: str) -> dict[str, Any]:
     }
 
 
+def _fallback_analysis(language: str) -> dict[str, Any]:
+    fallback_texts = {
+        "de": {
+            "full_explanation": (
+                "Die Analyse konnte nicht durchgeführt werden, weil kein Anthropic API-Key gesetzt ist. "
+                "Bitte trage ANTHROPIC_API_KEY in backend/.env ein und starte das Backend neu."
+            ),
+            "action_required": (
+                "Trage einen gültigen ANTHROPIC_API_KEY in backend/.env ein und starte das Backend neu."
+            ),
+        },
+        "tr": {
+            "full_explanation": (
+                "Analiz, Anthropic API anahtarı olmadığı için yapılamadı. "
+                "Lütfen backend/.env dosyasına ANTHROPIC_API_KEY ekleyin ve backend'i yeniden başlatın."
+            ),
+            "action_required": (
+                "Geçerli bir ANTHROPIC_API_KEY ekleyin ve backend'i yeniden başlatın."
+            ),
+        },
+        "ar": {
+            "full_explanation": (
+                "لا يمكن إجراء التحليل لأن مفتاح Anthropic API مفقود. "
+                "يرجى إضافة ANTHROPIC_API_KEY في backend/.env وإعادة تشغيل الخادم."
+            ),
+            "action_required": (
+                "أضف ANTHROPIC_API_KEY في backend/.env وأعد تشغيل الخادم."
+            ),
+        },
+        "ru": {
+            "full_explanation": (
+                "Анализ не может быть выполнен, потому что отсутствует ключ Anthropic API. "
+                "Пожалуйста, добавьте ANTHROPIC_API_KEY в backend/.env и перезапустите backend."
+            ),
+            "action_required": (
+                "Добавьте ANTHROPIC_API_KEY в backend/.env и перезапустите backend."
+            ),
+        },
+        "ku": {
+            "full_explanation": (
+                "Analîz nikare bikaribe, ji ber ku API-Key-a Anthropic tune ye. "
+                "Ji kerema xwe ANTHROPIC_API_KEY di backend/.env de zêde bike û backendê paşve bixwaze."
+            ),
+            "action_required": (
+                "Ji bo ku analiza çareser bibe, ANTHROPIC_API_KEY li backend/.env zêde bike û backendê paşve bixwaze."
+            ),
+        },
+        "uk": {
+            "full_explanation": (
+                "Аналіз не може бути виконаний, тому що відсутній ключ Anthropic API. "
+                "Будь ласка, додайте ANTHROPIC_API_KEY у backend/.env та перезапустіть backend."
+            ),
+            "action_required": (
+                "Додайте ANTHROPIC_API_KEY у backend/.env та перезапустіть backend."
+            ),
+        },
+    }
+    texts = fallback_texts.get(language, fallback_texts["de"])
+    return {
+        "authority_type": "Unbekannt",
+        "letter_type": "Behördenbrief",
+        "demand": "Analyse nicht möglich: Kein API-Key konfiguriert.",
+        "deadline": None,
+        "consequence": "Die App kann ohne API-Key nicht automatisch erkennen, was passieren wird.",
+        "action_required": texts["action_required"],
+        "full_explanation": texts["full_explanation"],
+        "urgency_level": "medium",
+        "language": language,
+    }
+
+
 class ClaudeService:
     """Asynchroner Wrapper um die Anthropic-API."""
 
@@ -134,6 +206,9 @@ class ClaudeService:
     async def analyze_letter(self, raw_text: str, language: str) -> dict[str, Any]:
         if not raw_text.strip():
             raise ValueError("Text konnte nicht erkannt werden. Bitte lade ein klareres Bild oder PDF hoch.")
+
+        if not settings.anthropic_api_key:
+            return _fallback_analysis(language)
 
         last_error: Exception | None = None
         for attempt in range(3):
@@ -202,6 +277,12 @@ class ClaudeService:
             f"{raw_text}\n"
             "---- ENDE ----"
         )
+
+        if not settings.anthropic_api_key:
+            return (
+                "Antwortentwurf kann nicht generiert werden, weil kein Anthropic API-Key gesetzt ist. "
+                "Bitte trage ANTHROPIC_API_KEY in backend/.env ein und starte das Backend neu."
+            )
 
         try:
             response = await self._client.messages.create(

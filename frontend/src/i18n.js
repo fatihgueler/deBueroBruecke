@@ -7,13 +7,15 @@ import tr from './locales/tr.json';
 import ar from './locales/ar.json';
 import ru from './locales/ru.json';
 import ku from './locales/ku.json';
+import uk from './locales/uk.json';
 
 export const SUPPORTED_LANGUAGES = [
-  { code: 'de', label: 'Deutsch', flag: 'DE' },
-  { code: 'tr', label: 'Türkçe', flag: 'TR' },
-  { code: 'ar', label: 'العربية', flag: 'AR' },
-  { code: 'ru', label: 'Русский', flag: 'RU' },
-  { code: 'ku', label: 'Kurmancî', flag: 'KU' },
+  { code: 'de', label: 'Deutsch',      flag: '🇩🇪' },
+  { code: 'tr', label: 'Türkçe',       flag: '🇹🇷' },
+  { code: 'ar', label: 'العربية',      flag: '🇸🇦' },
+  { code: 'ru', label: 'Русский',      flag: '🇷🇺' },
+  { code: 'ku', label: 'Kurmancî',     flag: '🏴' },
+  { code: 'uk', label: 'Українська',   flag: '🇺🇦' },
 ];
 
 export const RTL_LANGUAGES = new Set(['ar']);
@@ -28,6 +30,7 @@ i18n
       ar: { translation: ar },
       ru: { translation: ru },
       ku: { translation: ku },
+      uk: { translation: uk },
     },
     fallbackLng: 'de',
     supportedLngs: SUPPORTED_LANGUAGES.map((l) => l.code),

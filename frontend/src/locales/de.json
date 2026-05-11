@@ -1,120 +1,250 @@
 {
   "app": {
     "name": "BüroBrücke",
-    "tagline": "Fotografiere deinen Behördenbrief — wir erklären, was du tun musst."
+    "tagline": "Behördenbriefe sofort verstehen – in deiner Sprache."
   },
   "nav": {
+    "home":      "Startseite",
     "dashboard": "Übersicht",
-    "upload": "Neuer Brief",
-    "logout": "Abmelden",
-    "login": "Anmelden",
-    "register": "Registrieren"
+    "upload":    "Neuer Brief",
+    "logout":    "Abmelden",
+    "login":     "Anmelden",
+    "register":  "Kostenlos registrieren",
+    "about":     "Über uns"
   },
   "landing": {
-    "title": "Behördenbriefe in Sekunden verstehen",
-    "subtitle": "Lade einen Brief hoch und erhalte sofort eine klare Erklärung in deiner Sprache.",
-    "cta": "Jetzt loslegen",
-    "ctaLogin": "Anmelden",
+    "badge":    "KI-gestützt · 6 Sprachen · 100 % kostenlos",
+    "title": {
+      "part1":     "Jeden deutschen",
+      "highlight": "Behördenbrief",
+      "part2":     "sofort verstehen"
+    },
+    "subtitle":  "Lade deinen Behördenbrief hoch – wir erklären in Sekunden, was gefordert wird, welche Frist gilt und was du konkret tun musst. In deiner Muttersprache.",
+    "cta":       "Jetzt kostenlos starten",
+    "ctaLogin":  "Schon registriert? Anmelden",
+    "learnMore": "Mehr erfahren",
+    "trust_badge": {
+      "free":    "100 % kostenlos",
+      "noData":  "Keine Datenweitergabe",
+      "instant": "Sofortige Antwort"
+    },
+    "languages": {
+      "label": "Verfügbare Sprachen"
+    },
+    "steps": {
+      "eyebrow": "So einfach funktioniert es",
+      "title":   "In 3 Schritten zum Ergebnis",
+      "subtitle":"Kein Behördendeutsch mehr. Verstehe deinen Brief in wenigen Sekunden.",
+      "upload": {
+        "title": "Brief hochladen",
+        "desc":  "Foto, Scan oder PDF – alles wird automatisch erkannt und der Text extrahiert."
+      },
+      "analyze": {
+        "title": "KI analysiert",
+        "desc":  "Unsere KI erkennt Behörde, Forderung, Frist und bewertet die Dringlichkeit."
+      },
+      "act": {
+        "title": "Verstehen & handeln",
+        "desc":  "Du erhältst eine klare Erklärung in deiner Sprache und konkrete Handlungsschritte."
+      }
+    },
+    "authorities": {
+      "label": "Unterstützte Behörden & Institutionen"
+    },
+    "trust": {
+      "title":    "Sicher, schnell und vertrauenswürdig",
+      "subtitle": "Entwickelt für Menschen, die Verlass brauchen – nicht auf Bürokratie, sondern auf klare Hilfe.",
+      "secure": {
+        "title": "Datensicherheit",
+        "desc":  "Deine Dokumente werden sicher gespeichert und niemals weitergegeben."
+      },
+      "fast": {
+        "title": "Sofortige Analyse",
+        "desc":  "Ergebnisse in Sekunden – kein Warten, keine langen Formulare."
+      },
+      "multi": {
+        "title": "6 Sprachen",
+        "desc":  "Erklärungen in deiner Muttersprache: Türkisch, Arabisch, Russisch, Kurdisch, Ukrainisch."
+      },
+      "free": {
+        "title": "Komplett kostenlos",
+        "desc":  "BüroBrücke ist kostenlos für alle Einwanderer und Geflüchteten in Deutschland."
+      }
+    },
+    "finalCta": {
+      "title":    "Starte noch heute mit BüroBrücke",
+      "subtitle": "Kostenlos registrieren und sofort Behördenbriefe in deiner Sprache verstehen.",
+      "hint":     "Keine Kreditkarte notwendig · 100 % kostenlos"
+    },
     "features": {
       "photo": {
         "title": "Fotografieren oder hochladen",
-        "desc": "Foto, Scan oder PDF — alles wird automatisch erkannt."
+        "desc":  "Foto, Scan oder PDF – alles wird automatisch erkannt."
       },
       "explain": {
         "title": "Klare Erklärung",
-        "desc": "Wir übersetzen Behördensprache in einfache Worte."
+        "desc":  "Wir übersetzen Behördensprache in einfache Worte."
       },
       "act": {
         "title": "Konkrete nächste Schritte",
-        "desc": "Du erfährst, was du tun musst und bis wann."
+        "desc":  "Du erfährst, was du tun musst und bis wann."
       }
     }
   },
   "auth": {
-    "email": "E-Mail",
-    "password": "Passwort",
-    "language": "Bevorzugte Sprache",
-    "login": "Anmelden",
-    "register": "Konto erstellen",
-    "noAccount": "Noch kein Konto?",
-    "haveAccount": "Schon registriert?",
-    "registerNow": "Jetzt registrieren",
-    "loginNow": "Anmelden",
-    "loginTitle": "Willkommen zurück",
-    "loginSubtitle": "Melde dich an, um deine Briefe zu verwalten.",
-    "registerTitle": "Konto erstellen",
-    "registerSubtitle": "Kostenlos starten — Brief hochladen und verstehen.",
-    "passwordHint": "Mindestens 8 Zeichen.",
+    "email":            "E-Mail-Adresse",
+    "password":         "Passwort",
+    "language":         "Bevorzugte Sprache",
+    "login":            "Anmelden",
+    "register":         "Konto erstellen",
+    "noAccount":        "Noch kein Konto?",
+    "haveAccount":      "Schon registriert?",
+    "registerNow":      "Jetzt kostenlos registrieren",
+    "loginNow":         "Anmelden",
+    "loginTitle":       "Willkommen zurück",
+    "loginSubtitle":    "Melde dich an, um deine Briefe zu verwalten.",
+    "registerTitle":    "Konto erstellen",
+    "registerSubtitle": "Kostenlos starten – Brief hochladen und sofort verstehen.",
+    "passwordHint":     "Mindestens 8 Zeichen.",
     "errors": {
-      "required": "Pflichtfeld",
-      "emailInvalid": "Bitte eine gültige E-Mail eingeben.",
-      "passwordTooShort": "Mindestens 8 Zeichen.",
-      "loginFailed": "E-Mail oder Passwort ist falsch.",
-      "registerFailed": "Registrierung fehlgeschlagen."
+      "required":        "Pflichtfeld",
+      "emailInvalid":    "Bitte eine gültige E-Mail-Adresse eingeben.",
+      "passwordTooShort":"Mindestens 8 Zeichen erforderlich.",
+      "loginFailed":     "E-Mail oder Passwort ist falsch.",
+      "registerFailed":  "Registrierung fehlgeschlagen. Bitte versuche es erneut."
     }
   },
   "dashboard": {
-    "title": "Deine Briefe",
-    "subtitle": "Alle hochgeladenen Briefe und ihre Analysen.",
-    "empty": "Du hast noch keine Briefe hochgeladen.",
-    "newUpload": "Neuen Brief hochladen",
+    "title":    "Deine Briefe",
+    "subtitle": "Alle hochgeladenen Briefe und ihre Analysen im Überblick.",
+    "empty":    "Du hast noch keine Briefe hochgeladen.",
+    "newUpload":"Neuen Brief hochladen",
     "status": {
-      "pending": "Wartet auf Analyse",
+      "pending":  "Ausstehend",
       "analyzed": "Analysiert",
-      "error": "Fehler"
+      "error":    "Fehler"
     },
-    "delete": "Löschen",
-    "deleteConfirm": "Diesen Brief wirklich löschen?",
-    "view": "Ansehen"
+    "delete":        "Löschen",
+    "deleteConfirm": "Diesen Brief wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
+    "view":          "Ansehen"
   },
   "upload": {
-    "title": "Brief hochladen",
-    "subtitle": "Lade ein Foto, einen Scan oder ein PDF deines Behördenbriefs hoch.",
-    "dropzone": "Datei hier ablegen oder klicken zum Auswählen",
-    "dropzoneActive": "Datei ablegen…",
-    "hint": "JPG, PNG oder PDF · max. 10 MB",
-    "uploading": "Wird hochgeladen…",
-    "analyzing": "Brief wird analysiert…",
-    "errorType": "Nicht unterstütztes Dateiformat.",
-    "errorSize": "Datei ist zu groß (max. 10 MB).",
-    "errorUpload": "Upload fehlgeschlagen.",
-    "errorAnalysis": "Analyse fehlgeschlagen."
+    "title":         "Brief hochladen",
+    "subtitle":      "Lade ein Foto, einen Scan oder ein PDF deines Behördenbriefs hoch – wir erledigen den Rest.",
+    "dropzone":      "Datei hier ablegen oder klicken zum Auswählen",
+    "dropzoneActive":"Datei ablegen …",
+    "hint":          "JPG, PNG oder PDF · max. 10 MB",
+    "uploading":     "Wird hochgeladen …",
+    "analyzing":     "Brief wird analysiert …",
+    "errorType":     "Nicht unterstütztes Dateiformat. Bitte JPG, PNG oder PDF verwenden.",
+    "errorSize":     "Datei ist zu groß (max. 10 MB).",
+    "errorUpload":   "Upload fehlgeschlagen. Bitte erneut versuchen.",
+    "errorAnalysis": "Analyse fehlgeschlagen. Bitte erneut versuchen."
   },
   "result": {
-    "title": "Analyse-Ergebnis",
-    "authority": "Behörde",
-    "letterType": "Brieftyp",
-    "demand": "Was wird gefordert?",
-    "deadline": "Frist",
-    "noDeadline": "Keine Frist angegeben",
-    "consequence": "Was passiert, wenn ich nichts tue?",
-    "action": "Was solltest du jetzt tun?",
-    "fullExplanation": "Vollständige Erklärung",
-    "generateReply": "Antwortentwurf erstellen",
-    "regenerateReply": "Neuen Entwurf erstellen",
-    "replyDraft": "Antwortentwurf",
-    "replyHint": "Bitte ergänze die Platzhalter [in eckigen Klammern] vor dem Absenden.",
-    "copyReply": "Entwurf kopieren",
-    "copied": "Kopiert!",
-    "generating": "Entwurf wird erstellt…",
-    "backToDashboard": "Zurück zur Übersicht",
+    "title":            "Analyse-Ergebnis",
+    "authority":        "Behörde",
+    "letterType":       "Art des Schreibens",
+    "demand":           "Was wird gefordert?",
+    "deadline":         "Frist",
+    "noDeadline":       "Keine Frist angegeben",
+    "consequence":      "Was passiert, wenn ich nichts tue?",
+    "action":           "Was solltest du jetzt tun?",
+    "fullExplanation":  "Vollständige Erklärung",
+    "generateReply":    "Antwortentwurf erstellen",
+    "regenerateReply":  "Neuen Entwurf erstellen",
+    "replyDraft":       "Antwortentwurf (Deutsch)",
+    "replyHint":        "Ergänze die Platzhalter [in eckigen Klammern] vor dem Absenden.",
+    "copyReply":        "Entwurf kopieren",
+    "copied":           "Kopiert!",
+    "generating":       "Entwurf wird erstellt …",
+    "backToDashboard":  "Zurück zur Übersicht",
     "urgency": {
-      "low": "Niedrige Dringlichkeit",
-      "medium": "Mittlere Dringlichkeit",
-      "high": "Hohe Dringlichkeit",
-      "critical": "Kritisch – sofort handeln"
+      "low":      "Niedrige Dringlichkeit",
+      "medium":   "Mittlere Dringlichkeit",
+      "high":     "Hohe Dringlichkeit",
+      "critical": "Kritisch – sofort handeln!"
+    }
+  },
+  "about": {
+    "title":    "Über BüroBrücke",
+    "subtitle": "Wir helfen Einwanderern und Geflüchteten, die deutsche Bürokratie zu verstehen.",
+    "mission": {
+      "title": "Unsere Mission",
+      "desc":  "BüroBrücke wurde entwickelt, um eine der größten Hürden für neue Einwanderer in Deutschland zu überwinden: die komplizierte Behördensprache. Wir nutzen modernste KI-Technologie, um Behördenbriefe in einfache, verständliche Sprache in der Muttersprache der Nutzer zu übersetzen – schnell, präzise und kostenlos."
+    },
+    "problem": {
+      "title": "Das Problem",
+      "desc":  "Jährlich kommen hunderttausende Menschen nach Deutschland. Sie erhalten Briefe vom Finanzamt, Jobcenter, der Ausländerbehörde und anderen Behörden – auf Deutsch, in schwer verständlichem Amtsdeutsch. Ohne Hilfe können diese Briefe überfordern, zu verpassten Fristen und ernsthaften Konsequenzen führen."
+    },
+    "solution": {
+      "title": "Unsere Lösung",
+      "desc":  "Ein Foto oder PDF-Upload genügt. Unsere KI analysiert den Brief und liefert innerhalb von Sekunden eine klare Erklärung in der Muttersprache des Nutzers – inklusive konkreter Handlungsschritte und einem professionellen Antwortentwurf auf Deutsch."
+    },
+    "languages": {
+      "title": "Unterstützte Sprachen",
+      "desc":  "Derzeit unterstützen wir 6 Sprachen: Deutsch, Türkisch, Arabisch, Russisch, Kurdisch (Kurmancî) und Ukrainisch. Weitere Sprachen werden kontinuierlich ergänzt."
+    }
+  },
+  "impressum": {
+    "title":      "Impressum",
+    "developer":  "Entwickler",
+    "contact":    "Kontakt",
+    "disclaimer": {
+      "title":   "Haftungsausschluss",
+      "content": "BüroBrücke bietet keine Rechtsberatung. Die Informationen dienen ausschließlich zur ersten Orientierung. Für rechtliche Fragen wende dich bitte an einen Fachanwalt oder eine anerkannte Beratungsstelle."
+    },
+    "tech": {
+      "title":   "Technologie",
+      "content": "Diese Anwendung nutzt Claude AI von Anthropic zur Textanalyse sowie Tesseract OCR zur Texterkennung aus Bildern und PDFs."
+    }
+  },
+  "datenschutz": {
+    "title": "Datenschutzerklärung",
+    "intro": "Wir nehmen den Schutz deiner persönlichen Daten sehr ernst.",
+    "sections": {
+      "data": {
+        "title":   "Welche Daten werden erfasst?",
+        "content": "Wir speichern deine E-Mail-Adresse für die Authentifizierung sowie die von dir hochgeladenen Dokumente für die Analyse. Passwörter werden mit bcrypt gehasht und niemals im Klartext gespeichert."
+      },
+      "usage": {
+        "title":   "Wofür werden deine Daten genutzt?",
+        "content": "Deine Dokumente werden ausschließlich zur KI-Analyse genutzt. Wir geben deine Daten nicht an Dritte weiter. Kein Tracking, keine Werbung."
+      },
+      "deletion": {
+        "title":   "Löschung deiner Daten",
+        "content": "Du kannst deine Dokumente jederzeit über das Dashboard löschen. Für die vollständige Löschung deines Kontos kontaktiere uns bitte direkt."
+      },
+      "cookies": {
+        "title":   "Cookies",
+        "content": "Wir verwenden ausschließlich technisch notwendige Cookies (JWT-Authentifizierungstoken). Es werden keine Tracking- oder Werbe-Cookies eingesetzt."
+      }
     }
   },
   "common": {
-    "loading": "Lädt…",
-    "error": "Etwas ist schiefgelaufen.",
-    "retry": "Erneut versuchen",
-    "cancel": "Abbrechen",
-    "save": "Speichern",
-    "close": "Schließen"
+    "loading": "Lädt …",
+    "error":   "Etwas ist schiefgelaufen.",
+    "retry":   "Erneut versuchen",
+    "cancel":  "Abbrechen",
+    "save":    "Speichern",
+    "close":   "Schließen",
+    "back":    "Zurück"
   },
   "footer": {
-    "rights": "© 2025 BüroBrücke. Alle Rechte vorbehalten.",
-    "disclaimer": "BüroBrücke ersetzt keine Rechtsberatung."
+    "tagline":       "Die Brücke zwischen Einwanderern und der deutschen Bürokratie.",
+    "disclaimer":    "BüroBrücke ersetzt keine Rechtsberatung.",
+    "rights_short":  "Alle Rechte vorbehalten.",
+    "madeWith":      "Entwickelt mit",
+    "forImmigrants": "für Einwanderer in Deutschland",
+    "sections": {
+      "product": "Produkt",
+      "legal":   "Rechtliches"
+    },
+    "links": {
+      "about":       "Über uns",
+      "impressum":   "Impressum",
+      "datenschutz": "Datenschutz",
+      "contact":     "Kontakt"
+    }
   }
 }

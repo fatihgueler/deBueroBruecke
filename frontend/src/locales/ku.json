@@ -1,120 +1,199 @@
 {
   "app": {
     "name": "BüroBrücke",
-    "tagline": "Nameya fermî bigire wêne — em ji te re rave dikin tu çi bikî."
+    "tagline": "Nameyên fermî yekser fêhm bike – bi zimanê xwe."
   },
   "nav": {
+    "home":      "Rûpela sereke",
     "dashboard": "Sereke",
-    "upload": "Nameya nû",
-    "logout": "Derkeve",
-    "login": "Têkeve",
-    "register": "Tomar bibe"
+    "upload":    "Nameya nû",
+    "logout":    "Derkeve",
+    "login":     "Têkeve",
+    "register":  "Belaş tomar bibe",
+    "about":     "Derbarê me"
   },
   "landing": {
-    "title": "Nameyên fermî di çend saniyan de fêhm bike",
-    "subtitle": "Nameyê bar bike û bi zimanê xwe ravekirineke zelal werbigire.",
-    "cta": "Niha dest pê bike",
-    "ctaLogin": "Têkeve",
-    "features": {
-      "photo": {
-        "title": "Wêne bigire an bar bike",
-        "desc": "Wêne, skan an PDF — her tişt bixweber tê naskirin."
+    "badge":    "Bi Zekaya Çêkirî · 6 Ziman · 100% Belaş",
+    "title": {
+      "part1":     "Her nameya fermî ya",
+      "highlight": "Almanyayê",
+      "part2":     "yekser fêhm bike"
+    },
+    "subtitle":  "Nameya xwe bar bike – di çend saniyan de tê zanibî çi tê xwestin, kîjan hevala heye û tu çi bikî – bi zimanê xwe.",
+    "cta":       "Belaş dest pê bike",
+    "ctaLogin":  "Tomar bûyî? Têkeve",
+    "learnMore": "Bêtir fêr bibe",
+    "trust_badge": {
+      "free":    "100% belaş",
+      "noData":  "Daneyên te nayên belavkirin",
+      "instant": "Bersiva yekser"
+    },
+    "languages": {
+      "label": "Zimanên piştgirîkirî"
+    },
+    "steps": {
+      "eyebrow": "Ev çawa dixebite",
+      "title":   "Di 3 gavan de encam",
+      "subtitle":"Êdî zimanê fermî tune. Di çend saniyan de nameyê fêhm bike.",
+      "upload": {
+        "title": "Nameyê bar bike",
+        "desc":  "Wêne, skan an PDF – her tişt bixweber tê naskirin û nivîsar tê derxistin."
       },
-      "explain": {
-        "title": "Ravekirineke zelal",
-        "desc": "Em zimanê fermî bo gotinên hêsan werdigerînin."
+      "analyze": {
+        "title": "ZÇ analîz dike",
+        "desc":  "ZÇa me saziyê, daxwazê, hevala nasnas dike û acîliyetê dinirxîne."
       },
       "act": {
-        "title": "Gavên paşê yên diyar",
-        "desc": "Tê zanibî tu çi bikî û heta kîjan rojê."
+        "title": "Fêhm bike û biken",
+        "desc":  "Bi zimanê xwe ravekirineke zelal û gavên diyar distînî."
       }
+    },
+    "authorities": {
+      "label": "Sazî û dezgehên piştgirîkirî"
+    },
+    "trust": {
+      "title":    "Ewle, bilez û pêbawer",
+      "subtitle": "Ji bo kesên ku hewceyê alîkariya rastîn in hatiye çêkirin.",
+      "secure": {
+        "title": "Ewlehiya daneyan",
+        "desc":  "Belgeyên te bi ewlehî têne hilanîn û qet nayên belavkirin."
+      },
+      "fast": {
+        "title": "Analîza yekser",
+        "desc":  "Di çend saniyan de encam – tu li benda tune, formên dirêj tune."
+      },
+      "multi": {
+        "title": "6 ziman",
+        "desc":  "Bi Kurdî, Tirkî, Erebî, Rûsî, Ukraynî û Almanî rave dike."
+      },
+      "free": {
+        "title": "Bi tevahî belaş",
+        "desc":  "BüroBrücke ji bo hemû koçberan û penaberan li Almanyayê belaş e."
+      }
+    },
+    "finalCta": {
+      "title":    "Îro bi BüroBrücke dest pê bike",
+      "subtitle": "Belaş tomar bibe û nameyên fermî yekser bi zimanê xwe fêhm bike.",
+      "hint":     "Karta krediyê ne lazim e · 100% belaş"
+    },
+    "features": {
+      "photo":   { "title": "Wêne bigire an bar bike", "desc": "Wêne, skan an PDF – her tişt bixweber tê naskirin." },
+      "explain": { "title": "Ravekirineke zelal",       "desc": "Em zimanê fermî bo gotinên hêsan werdigerînin." },
+      "act":     { "title": "Gavên paşê yên diyar",     "desc": "Tê zanibî tu çi bikî û heta kîjan rojê." }
     }
   },
   "auth": {
-    "email": "E-mail",
-    "password": "Şîfre",
-    "language": "Zimanê hilbijartî",
-    "login": "Têkeve",
-    "register": "Hesabê biafirîne",
-    "noAccount": "Hesabê te tune?",
-    "haveAccount": "Berê tomar bûyî?",
-    "registerNow": "Niha tomar bibe",
-    "loginNow": "Têkeve",
-    "loginTitle": "Bi xêr hatî",
-    "loginSubtitle": "Ji bo birêvebirina nameyên xwe têkeve.",
-    "registerTitle": "Hesabê biafirîne",
-    "registerSubtitle": "Belaş dest pê bike — nameyê bar bike û fêhm bike.",
-    "passwordHint": "Herî kêm 8 tîp.",
+    "email":            "E-mail",
+    "password":         "Şîfre",
+    "language":         "Zimanê hilbijartî",
+    "login":            "Têkeve",
+    "register":         "Hesabê biafirîne",
+    "noAccount":        "Hesabê te tune?",
+    "haveAccount":      "Berê tomar bûyî?",
+    "registerNow":      "Belaş tomar bibe",
+    "loginNow":         "Têkeve",
+    "loginTitle":       "Bi xêr hatî",
+    "loginSubtitle":    "Ji bo birêvebirina nameyên xwe têkeve.",
+    "registerTitle":    "Hesabê biafirîne",
+    "registerSubtitle": "Belaş dest pê bike – nameyê bar bike û fêhm bike.",
+    "passwordHint":     "Herî kêm 8 tîp.",
     "errors": {
-      "required": "Pêwîst",
-      "emailInvalid": "Ji kerema xwe e-maileke rast binivîse.",
-      "passwordTooShort": "Herî kêm 8 tîp.",
-      "loginFailed": "E-mail an şîfre xelet e.",
-      "registerFailed": "Tomarkirin bi ser neket."
+      "required":        "Pêwîst",
+      "emailInvalid":    "Ji kerema xwe e-maileke rast binivîse.",
+      "passwordTooShort":"Herî kêm 8 tîp pêwîst in.",
+      "loginFailed":     "E-mail an şîfre xelet e.",
+      "registerFailed":  "Tomarkirin bi ser neket. Ji nû ve biceribîne."
     }
   },
   "dashboard": {
-    "title": "Nameyên te",
+    "title":    "Nameyên te",
     "subtitle": "Hemû nameyên ku te bar kirine û analîzên wan.",
-    "empty": "Te hîn ti name bar nekirine.",
-    "newUpload": "Nameyek nû bar bike",
-    "status": {
-      "pending": "Li benda analîzê",
-      "analyzed": "Hatiye analîz kirin",
-      "error": "Xeletî"
-    },
-    "delete": "Jê bibe",
-    "deleteConfirm": "Tu dixwazî vê nameyê jê bibî?",
-    "view": "Binêre"
+    "empty":    "Te hîn ti name bar nekirine.",
+    "newUpload":"Nameyek nû bar bike",
+    "status": { "pending": "Li benda analîzê", "analyzed": "Hatiye analîz kirin", "error": "Xeletî" },
+    "delete":        "Jê bibe",
+    "deleteConfirm": "Tu dixwazî vê nameyê jê bibî? Ev kiryar nayê guhastin.",
+    "view":          "Binêre"
   },
   "upload": {
-    "title": "Nameyê bar bike",
-    "subtitle": "Wêneya, skana an PDF a nameya fermî bar bike.",
-    "dropzone": "Pelê li vir berde an bitikîne ku hilbijêrî",
-    "dropzoneActive": "Pelê berde…",
-    "hint": "JPG, PNG an PDF · zêdetirîn 10 MB",
-    "uploading": "Tê barkirin…",
-    "analyzing": "Name tê analîz kirin…",
-    "errorType": "Forma pelê nayê piştgirîkirin.",
-    "errorSize": "Pel pir mezin e (zêdetirîn 10 MB).",
-    "errorUpload": "Barkirin bi ser neket.",
-    "errorAnalysis": "Analîz bi ser neket."
+    "title":         "Nameyê bar bike",
+    "subtitle":      "Wêneya, skana an PDF a nameya fermî bar bike – em yên mayî dikin.",
+    "dropzone":      "Pelê li vir berde an bitikîne ku hilbijêrî",
+    "dropzoneActive":"Pelê berde …",
+    "hint":          "JPG, PNG an PDF · zêdetirîn 10 MB",
+    "uploading":     "Tê barkirin …",
+    "analyzing":     "Name tê analîz kirin …",
+    "errorType":     "Forma pelê nayê piştgirîkirin. JPG, PNG an PDF bikar bîne.",
+    "errorSize":     "Pel pir mezin e (zêdetirîn 10 MB).",
+    "errorUpload":   "Barkirin bi ser neket. Ji nû ve biceribîne.",
+    "errorAnalysis": "Analîz bi ser neket. Ji nû ve biceribîne."
   },
   "result": {
-    "title": "Encama analîzê",
-    "authority": "Saziya fermî",
-    "letterType": "Cureyê nameyê",
-    "demand": "Çi tê xwestin?",
-    "deadline": "Dema dawî",
-    "noDeadline": "Dema dawî nehatiye diyarkirin",
-    "consequence": "Ger ez tiştekî nekim çi diqewime?",
-    "action": "Niha divê tu çi bikî?",
+    "title":           "Encama analîzê",
+    "authority":       "Saziya fermî",
+    "letterType":      "Cureyê nameyê",
+    "demand":          "Çi tê xwestin?",
+    "deadline":        "Dema dawî",
+    "noDeadline":      "Dema dawî nehatiye diyarkirin",
+    "consequence":     "Ger ez tiştekî nekim çi diqewime?",
+    "action":          "Niha divê tu çi bikî?",
     "fullExplanation": "Ravekirina tam",
-    "generateReply": "Pêşnûma bersivê biafirîne",
+    "generateReply":   "Pêşnûma bersivê biafirîne",
     "regenerateReply": "Pêşnûmeyek nû biafirîne",
-    "replyDraft": "Pêşnûma bersivê",
-    "replyHint": "Berî şandinê cihên [di nav kevanan] de tijî bike.",
-    "copyReply": "Pêşnûmê kopî bike",
-    "copied": "Hatiye kopîkirin!",
-    "generating": "Pêşnûma tê afirandin…",
+    "replyDraft":      "Pêşnûma bersivê (bi Almanî)",
+    "replyHint":       "Berî şandinê cihên [di nav kevanan] de tijî bike.",
+    "copyReply":       "Pêşnûmê kopî bike",
+    "copied":          "Hatiye kopîkirin!",
+    "generating":      "Pêşnûma tê afirandin …",
     "backToDashboard": "Vegere sereke",
     "urgency": {
-      "low": "Acîliyeta kêm",
-      "medium": "Acîliyeta navîn",
-      "high": "Acîliyeta zêde",
-      "critical": "Krîtîk — yekser bike"
+      "low":      "Acîliyeta kêm",
+      "medium":   "Acîliyeta navîn",
+      "high":     "Acîliyeta zêde",
+      "critical": "Krîtîk – yekser bikî!"
+    }
+  },
+  "about": {
+    "title":    "Derbarê BüroBrücke",
+    "subtitle": "Em ji koçberan û penaberan re dibin alîkar ku bürokrasiya Almanyayê fêhm bikin.",
+    "mission":  { "title": "Mîsyona me", "desc": "BüroBrücke ji bo ku yek ji astengên herî mezin ji nû hatiyên Almanyayê were rakirin hatiye çêkirin: zimanê fermî ya tevlihev. Em teknolojiya herî pêşkeftî ya ZÇ bikar tînin da ku nameyên fermî bi zimanê hêsan bên ravekirin." },
+    "problem":  { "title": "Pirsgirêk", "desc": "Her sal sed hezaran kes diçin Almanyayê. Ew ji Finanzamt, Jobcenter, Ausländerbehörde û saziyên din name werdigirin – bi Almanî. Bê alîkarî ev name dikarin zilam bibin û encamên cidî bînin." },
+    "solution": { "title": "Çareseriya me", "desc": "Yek wêne an PDF barkirî bes e. ZÇa me nameyê analîz dike û di çend saniyan de ravekirineke zelal bi zimanê bikarhêner rade, bi gavên taybetî." },
+    "languages":{ "title": "Zimanên piştgirîkirî", "desc": "Niha 6 ziman têne piştgirîkirin: Almanî, Tirkî, Erebî, Rûsî, Kurdî (Kurmancî) û Ukraynî." }
+  },
+  "impressum": {
+    "title": "Agahdariya qanûnî",
+    "developer": "Pêşdebir",
+    "contact": "Têkilî",
+    "disclaimer": { "title": "Dûrxistina berpirsiyariyê", "content": "BüroBrücke şêwirmendiya hiqûqî pêşkêş nake. Agahdarî tenê ji bo rêberiyê ye." },
+    "tech": { "title": "Teknolojî", "content": "Ev serîlêdan Claude AI ya Anthropic ji bo analîza nivîsarê û Tesseract OCR ji bo naskirina nivîsarê bikar tîne." }
+  },
+  "datenschutz": {
+    "title": "Siyaseta nepeniyê",
+    "intro": "Parastina daneyên kesane yên te ji me re pir girîng e.",
+    "sections": {
+      "data":     { "title": "Kîjan dane têne berhevkirin?", "content": "Em e-maila te ji bo nasnameyê û belgeyên ku te bar kirî ji bo analîzê tomar dikin." },
+      "usage":    { "title": "Daneyên te ji bo çi têne bikar anîn?", "content": "Belgeyên te tenê ji bo analîza ZÇ têne bikar anîn. Em daneyên te bi aliyên sêyemîn re parve nakin." },
+      "deletion": { "title": "Jêbirina daneyên te", "content": "Tu dikî belgeyên xwe di her demê de ji sereke jê bibî." },
+      "cookies":  { "title": "Cookies", "content": "Em tenê cookieyên pêwîst ên teknîkî (nîşana JWT ya nasnameyê) bikar tînin." }
     }
   },
   "common": {
-    "loading": "Tê barkirin…",
-    "error": "Tiştek xelet çû.",
-    "retry": "Dîsa biceribîne",
-    "cancel": "Betal bike",
-    "save": "Tomar bike",
-    "close": "Bigire"
+    "loading": "Tê barkirin …",
+    "error":   "Tiştek xelet çû.",
+    "retry":   "Dîsa biceribîne",
+    "cancel":  "Betal bike",
+    "save":    "Tomar bike",
+    "close":   "Bigire",
+    "back":    "Vegere"
   },
   "footer": {
-    "rights": "© 2025 BüroBrücke. Hemû maf parastî ne.",
-    "disclaimer": "BüroBrücke şûna şêwirmendiya hiqûqî nagire."
+    "tagline":      "Pirê di navbera koçberan û bürokrasiya Almanyayê de.",
+    "disclaimer":   "BüroBrücke şûna şêwirmendiya hiqûqî nagire.",
+    "rights_short": "Hemû maf parastî ne.",
+    "madeWith":     "Bi",
+    "forImmigrants":"ji bo koçberan li Almanyayê hatiye çêkirin",
+    "sections": { "product": "Hilber", "legal": "Hiqûqî" },
+    "links": { "about": "Derbarê me", "impressum": "Agahdariya qanûnî", "datenschutz": "Nepenî", "contact": "Têkilî" }
   }
 }
