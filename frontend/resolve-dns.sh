@@ -17,4 +17,11 @@ if [ -z "$DNS_RESOLVER" ]; then
     DNS_RESOLVER="127.0.0.11"
 fi
 
+# IPv6-Adressen (z.B. Railways "fd12::10") müssen im nginx-resolver-Directive
+# in eckigen Klammern stehen ("[fd12::10]:53"), sonst hält nginx den Doppelpunkt
+# fälschlich für eine Port-Angabe ("invalid port in resolver").
+case "$DNS_RESOLVER" in
+    *:*) DNS_RESOLVER="[${DNS_RESOLVER}]" ;;
+esac
+
 sed -i "s/__DNS_RESOLVER__/${DNS_RESOLVER}/g" /etc/nginx/conf.d/default.conf
