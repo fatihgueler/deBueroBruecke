@@ -30,7 +30,7 @@ class Settings(BaseSettings):
 
     jwt_algorithm: str = "HS256"
     jwt_expire_days: int = 30
-    claude_model: str = "claude-opus-4-8"
+    claude_model: str = "claude-sonnet-4-6"
 
     # SMTP E-Mail-Konfiguration (optional)
     smtp_host:     str  = ""
