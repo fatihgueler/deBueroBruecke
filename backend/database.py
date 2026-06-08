@@ -1,8 +1,7 @@
 """Datenbank-Engine, Session-Factory und Basisklasse für SQLAlchemy 2.0 (async)."""
 from __future__ import annotations
-
 from collections.abc import AsyncGenerator
-
+from pathlib import Path
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.orm import DeclarativeBase
 
@@ -12,6 +11,11 @@ except ImportError:
     from backend.config import get_settings
 
 settings = get_settings()
+
+# ✅ Verzeichnis erstellen BEVOR Engine startet
+if settings.database_url.startswith("sqlite"):
+    db_path = settings.database_url.replace("sqlite+aiosqlite:///", "")
+    Path(db_path).parent.mkdir(parents=True, exist_ok=True)
 
 engine = create_async_engine(
     settings.database_url,
@@ -26,21 +30,17 @@ AsyncSessionLocal = async_sessionmaker(
     autoflush=False,
 )
 
-
 class Base(DeclarativeBase):
     """Gemeinsame deklarative Basisklasse für alle ORM-Modelle."""
-
 
 async def init_db() -> None:
     """Erstellt alle Tabellen beim App-Start (idempotent)."""
     try:
-        import models  # noqa: F401  --  Modelle registrieren
+        import models
     except ImportError:
-        import backend.models  # noqa: F401  --  Modelle registrieren
-
+        import backend.models
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
-
 
 async def get_db() -> AsyncGenerator[AsyncSession, None]:
     """FastAPI-Dependency, die eine DB-Session pro Request bereitstellt."""
