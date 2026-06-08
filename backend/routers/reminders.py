@@ -1,6 +1,7 @@
 """Fristen-Erinnerungen: manuell auslösbar oder per Cron."""
 from __future__ import annotations
 
+import asyncio
 import logging
 from datetime import datetime, timedelta, timezone
 
@@ -54,7 +55,10 @@ async def check_deadlines(
         days_left = (deadline_date - now).days
         if days_left in thresholds:
             result_url = f"{settings.app_base_url}/result/{doc.id}"
-            ok = send_deadline_reminder(
+            # SMTP ist blockierendes I/O – in Thread auslagern, damit der
+            # Event-Loop währenddessen weiter andere Anfragen wie Login bedienen kann
+            ok = await asyncio.to_thread(
+                send_deadline_reminder,
                 to_email=current_user.email,
                 filename=doc.original_filename,
                 authority=analysis.authority_type,

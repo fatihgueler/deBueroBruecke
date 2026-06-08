@@ -1,6 +1,8 @@
 """Kontaktformular-Endpoint."""
 from __future__ import annotations
 
+import asyncio
+
 from fastapi import APIRouter, HTTPException, status
 from pydantic import BaseModel, EmailStr, Field
 
@@ -26,7 +28,10 @@ async def send_contact(payload: ContactRequest) -> dict:
     if payload.category not in CATEGORIES:
         payload.category = "Allgemeine Anfrage"
 
-    sent = send_contact_notification(
+    # SMTP ist blockierendes I/O – in Thread auslagern, damit der Event-Loop
+    # währenddessen weiter andere Anfragen wie Login bedienen kann
+    sent = await asyncio.to_thread(
+        send_contact_notification,
         name=payload.name,
         email=payload.email,
         message=payload.message,
