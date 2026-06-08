@@ -1,6 +1,7 @@
 """Auth-Router: Registrierung, Login, aktueller Benutzer, Passwort-Reset."""
 from __future__ import annotations
 
+import asyncio
 import secrets
 from datetime import datetime, timedelta, timezone
 
@@ -32,9 +33,12 @@ async def register(payload: UserCreate, db: AsyncSession = Depends(get_db)) -> T
             detail="Diese E-Mail-Adresse ist bereits registriert.",
         )
 
+    # bcrypt ist CPU-lastig/blockierend – in Thread auslagern, damit der
+    # Event-Loop währenddessen weiter andere Anfragen wie Login bedienen kann
+    hashed_password = await asyncio.to_thread(hash_password, payload.password)
     user = User(
         email=payload.email.lower(),
-        hashed_password=hash_password(payload.password),
+        hashed_password=hashed_password,
         preferred_language=payload.preferred_language,
     )
     db.add(user)
@@ -49,7 +53,9 @@ async def register(payload: UserCreate, db: AsyncSession = Depends(get_db)) -> T
 async def login(payload: UserLogin, db: AsyncSession = Depends(get_db)) -> TokenResponse:
     result = await db.execute(select(User).where(User.email == payload.email.lower()))
     user = result.scalar_one_or_none()
-    if user is None or not verify_password(payload.password, user.hashed_password):
+    # bcrypt ist CPU-lastig/blockierend – in Thread auslagern, damit der
+    # Event-Loop währenddessen weiter andere Anfragen wie Login bedienen kann
+    if user is None or not await asyncio.to_thread(verify_password, payload.password, user.hashed_password):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="E-Mail oder Passwort ist falsch.",

@@ -1,5 +1,6 @@
 """Documents-Router: Upload, Liste, Details, Löschen."""
 
+import asyncio
 import uuid
 from pathlib import Path
 
@@ -94,12 +95,13 @@ async def upload_document(
             detail="Datei konnte nicht gespeichert werden.",
         ) from exc
 
-    # Textextraktion
+    # Textextraktion (CPU-lastig/blockierend – in Thread auslagern, damit der
+    # Event-Loop währenddessen weiter andere Anfragen wie Login bedienen kann)
     try:
         if file_type == "pdf":
-            raw_text = extract_pdf_text(target_path)
+            raw_text = await asyncio.to_thread(extract_pdf_text, target_path)
         else:
-            raw_text = extract_image_text(target_path)
+            raw_text = await asyncio.to_thread(extract_image_text, target_path)
     except Exception:
         raw_text = ""
 
