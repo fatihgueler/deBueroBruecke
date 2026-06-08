@@ -194,8 +194,8 @@ export default function LandingPage() {
       <section className="border-y border-border bg-card/30">
         <div className="section-container py-12">
           <div className="grid grid-cols-3 gap-8 divide-x divide-border">
-            <StatItem value={stats.documents_analyzed > 0 ? stats.documents_analyzed : 1240} suffix="+" label="Briefe analysiert" />
-            <StatItem value={stats.users_registered > 0 ? stats.users_registered : 380} suffix="+" label="Registrierte Nutzer" />
+            <StatItem value={stats.documents_analyzed} suffix="+" label="Briefe analysiert" />
+            <StatItem value={stats.users_registered} suffix="+" label="Registrierte Nutzer" />
             <StatItem value={stats.languages_supported} label="Unterstützte Sprachen" />
           </div>
         </div>
